@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-GB"
 site_theme               : "air" # Currently available options are "default", "air"
-title                    : "Qingyu Zhang / Personal Website"
+title                    : "Personal Website"
 title_separator          : "-"
 name                     : &name "Qingyu Zhang"
 description              : &description "I’m Qingyu Zhang, a PhD student at UCL. My research brings together circuit design, image processing, deep learning, and reinforcement learning to develop intelligent robotic systems for healthcare. I’m particularly interested in connecting hardware and algorithms to create systems that are both effective and practical in real-world use."
