@@ -1,5 +1,10 @@
-{% if site.url %}
-  {% assign base_path = site.url | append: site.baseurl %}
-{% else %}
-  {% assign base_path = site.github.url %}
-{% endif %}
+{%- comment -%}
+  base_path for building asset and link URLs
+  - production (GitHub Pages): prepend site.baseurl ('' for user site, '/repo' for project site)
+  - development: keep '' so links resolve from localhost root
+{%- endcomment -%}
+{%- if jekyll.environment == 'production' -%}
+  {%- assign base_path = site.baseurl | default: '' -%}
+{%- else -%}
+  {%- assign base_path = '' -%}
+{%- endif -%}
