@@ -1,0 +1,72 @@
+/* Custom overrides consolidated from head/custom.html */
+
+/* Header layout overrides moved back to _includes/head/custom.html */
+
+/* About page components */
+.about-section { margin: 1rem 0 1.25rem; }
+.about-section.card {
+  background: var(--mm-card-bg, #fff);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem; /* no left icon gutter */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+}
+.about-section .card-content h2 { margin-top: 0; margin-bottom: .35rem; }
+.about-section .card-content p { margin: 0; line-height: 1.7; }
+
+/* Chips */
+.chips { list-style: none; padding: 0; margin: .5rem 0 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+.chips li { background: rgba(0,0,0,0.05); color: inherit; padding: .4rem .7rem; border-radius: 999px; font-size: .92rem; }
+.chips li i { margin-right: .4rem; opacity: .8; }
+
+/* Timeline */
+.timeline { list-style: none; padding-left: 0; margin: .75rem 0 0; position: relative; }
+.timeline li { position: relative; padding-left: 1.5rem; margin: 0 0 1rem; }
+.timeline li::before { content: ""; position: absolute; left: .5rem; top: 0; bottom: -0.25rem; width: 2px; background: rgba(0,0,0,0.08); }
+.timeline li:last-child::before { bottom: .6rem; }
+.timeline-dot { position: absolute; left: .2rem; top: .35rem; width: .7rem; height: .7rem; background: var(--mm-accent, #3f51b5); border-radius: 50%; box-shadow: 0 0 0 3px rgba(63,81,181,.18); }
+.timeline-content h3 { margin: 0 0 .25rem; font-size: 1.02rem; }
+.timeline-content p { margin: 0; color: var(--mm-muted, #555); }
+.timeline .tl-date { font-weight: 600; color: var(--mm-accent, #3f51b5); font-size: .92rem; margin-left: .4rem; }
+.timeline li.is-current .timeline-dot { background: #2e7d32; box-shadow: 0 0 0 3px rgba(46,125,50,.2); }
+.timeline li.is-current .timeline-content h3 .tl-date { color: #2e7d32; }
+
+/* CV page button */
+.cv-actions .btn { font-size: 1.08rem; padding: .72rem 1.2rem; border-radius: 10px; gap: .6rem; }
+.cv-actions .btn-icon { font-size: 1.2em; }
+.btn-google { background: #1a73e8; color: #fff; border-color: transparent; box-shadow: 0 1px 2px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08); }
+.btn-google:hover { box-shadow: 0 3px 6px rgba(0,0,0,.15), 0 2px 4px rgba(0,0,0,.12); }
+.btn-google:active { transform: translateY(1px); }
+
+/* Responsive PDF viewer on CV page */
+.pdf-viewer {
+  position: relative;
+  width: 100%;
+  /*  A reasonable viewport height with max height cap */
+  height: min(80vh, 1000px);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,.06);
+}
+.pdf-viewer .pdf-embed { width: 100%; height: 100%; display: block; }
+.pdf-viewer .pdf-fallback { margin: 1rem; }
+
+/* Google-style button for CV */
+.btn {
+    display: inline-flex; align-items: center; gap: .5rem;
+    padding: .55rem .95rem; border-radius: 8px; text-decoration: none;
+    font-weight: 600; line-height: 1; transition: box-shadow .2s, transform .05s;
+    border: 1px solid rgba(0,0,0,.08);
+}
+.btn-google {
+    background: #1a73e8; color: #fff; border-color: transparent;
+    box-shadow: 0 1px 2px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);
+}
+.btn-google:hover { box-shadow: 0 3px 6px rgba(0,0,0,.15), 0 2px 4px rgba(0,0,0,.12); }
+.btn-google:active { transform: translateY(1px); }
+.btn-icon { font-size: 1.05em; line-height: 1; }
+
+/* Larger size only for the CV page button */
+.cv-actions .btn { font-size: 1.00rem; padding: .72rem 1.2rem; border-radius: 10px; gap: .6rem; }
+.cv-actions .btn-icon { font-size: 1.2em; }

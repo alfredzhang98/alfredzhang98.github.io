@@ -2,20 +2,30 @@
 layout: archive
 title: "CV"
 permalink: /cv/
-author_profile: true
+author_profile: False
 redirect_from:
   - /resume
 ---
 
 {% include base_path %}
 
-Education
+<div class="pdf-viewer">
+  <object data="{{ base_path }}/files/cv.pdf#view=FitH" type="application/pdf" class="pdf-embed">
+    <embed src="{{ base_path }}/files/cv.pdf#view=FitH" type="application/pdf"/>
+    <p class="pdf-fallback">
+      PDF preview isn’t supported in this browser.
+      <a href="{{ base_path }}/files/cv.pdf" target="_blank" rel="noopener">Open or download the CV</a>.
+    </p>
+  </object>
+</div>
+
+<!-- Education
 ======
 * Ph.D in Version Control Theory, GitHub University, 2018 (expected)
 * M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* B.S. in GitHub, GitHub University, 2012 -->
 
-Work experience
+<!-- Work experience
 ======
 * Spring 2024: Academic Pages Collaborator
   * GitHub University
@@ -30,35 +40,35 @@ Work experience
 * Summer 2015: Research Assistant
   * GitHub University
   * Duties included: Tagging issues
-  * Supervisor: Professor Git
+  * Supervisor: Professor Git -->
   
-Skills
+<!-- Skills
 ======
 * Skill 1
 * Skill 2
   * Sub-skill 2.1
   * Sub-skill 2.2
   * Sub-skill 2.3
-* Skill 3
+* Skill 3 -->
 
-Publications
+<!-- Publications
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+  {% endfor %}</ul> -->
   
-Talks
+<!-- Talks
 ======
   <ul>{% for post in site.talks reversed %}
     {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
+  {% endfor %}</ul> -->
   
-Teaching
+<!-- Teaching
 ======
   <ul>{% for post in site.teaching reversed %}
     {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+  {% endfor %}</ul> -->
   
-Service and leadership
+<!-- Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* Currently signed in to 43 different slack teams -->

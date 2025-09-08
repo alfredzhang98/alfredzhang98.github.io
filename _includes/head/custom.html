@@ -14,65 +14,42 @@
 <link rel="icon" href="/images/favicon.ico"/>
 <meta name="theme-color" content="#ffffff"/>
 
-<!-- Header layout overrides: title left, nav center, theme toggle right -->
-<style>
-	/* Use the existing markup: first li = title, last li (#theme-toggle) = theme button */
-			.masthead__menu { position: relative; }
-		/* Replace table layout with block/inline-block to allow centering */
-			#site-nav.greedy-nav .visible-links { 
-				display: block !important; 
-			position: static; 
-			width: 100%;
-			text-align: center; /* center the middle group */
-			/* Reserve space for left title and right controls (theme + hamburger) */
-			padding-left: 22ch; /* space for site title; adjust if needed */
-			padding-right: 5.75rem; /* ~ 2.5rem hamburger + 2.5rem theme + gaps */
-			box-sizing: border-box;
-		}
-			#site-nav.greedy-nav .visible-links > li { 
-				display: inline-block !important; 
-			vertical-align: middle; 
-		}
-		/* Title pinned to left edge of nav */
-			#site-nav.greedy-nav .visible-links > li:first-child { 
-			position: absolute; 
-			left: 0.75rem; 
-			top: 50%; 
-			transform: translateY(-50%);
-			white-space: nowrap; 
-			z-index: 2; 
-		}
-		/* Theme toggle pinned to right; aligned before hamburger button */
-			#site-nav.greedy-nav .visible-links > li#theme-toggle { 
-			position: absolute; 
-				right: 2.75rem; /* leave room for the hamburger button at right:0 */
-			top: 50%; 
-			transform: translateY(-50%);
-			z-index: 2; 
-		}
-		/* Spacing for centered inline-block items */
-			#site-nav.greedy-nav .visible-links > li a { 
-			margin: 0 0.8rem; 
-		}
-			#site-nav.greedy-nav .visible-links > li a:before { bottom: -2px; }
-	/* On very small screens, if overlap occurs, you can optionally hide middle links:
-		 @media (max-width: 420px) { .greedy-nav .visible-links > li:not(:first-child):not(#theme-toggle){ display:none; } }
-	*/
-				@media (max-width: 768px) {
-					#site-nav.greedy-nav .visible-links { padding-left: 18ch; padding-right: 5.25rem; }
-			}
-				@media (max-width: 520px) {
-					#site-nav.greedy-nav .visible-links { padding-left: 15ch; padding-right: 5rem; }
-			}
-			@media (max-width: 420px) { 
-				/* 若仍拥挤，可隐藏中间项，仅保留标题与主题 */
-				/* .greedy-nav .visible-links > li:not(:first-child):not(#theme-toggle){ display:none; } */
-			}
-</style>
-
+<!-- Custom styles moved to _sass/layout/_custom_overrides.scss and compiled in assets/css/main.scss -->
 {%- if jekyll.environment != 'production' -%}
 	<!-- LiveReload fallback: explicitly load the client in development -->
 	<script defer src="http://localhost:35729/livereload.js?snipver=1"></script>
 {%- endif -%}
+
+<!-- Header layout overrides: keep header-specific CSS close to head -->
+<style>
+	.masthead__menu { position: relative; }
+	#site-nav.greedy-nav .visible-links {
+		display: block !important;
+		position: static;
+		width: 100%;
+		text-align: center;
+		padding-left: 22ch; /* reserve left for title */
+		padding-right: 5.75rem; /* reserve right for theme + hamburger */
+		box-sizing: border-box;
+	}
+	#site-nav.greedy-nav .visible-links > li { display: inline-block !important; vertical-align: middle; }
+	#site-nav.greedy-nav .visible-links > li:first-child {
+		position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%);
+		white-space: nowrap; z-index: 2;
+	}
+	#site-nav.greedy-nav .visible-links > li#theme-toggle {
+		position: absolute; right: 2.75rem; top: 50%; transform: translateY(-50%); z-index: 2;
+	}
+	#site-nav.greedy-nav .visible-links > li a { margin: 0 0.8rem; }
+	#site-nav.greedy-nav .visible-links > li a:before { bottom: -2px; }
+	@media (max-width: 768px) {
+		#site-nav.greedy-nav .visible-links { padding-left: 18ch; padding-right: 5.25rem; }
+	}
+	@media (max-width: 520px) {
+		#site-nav.greedy-nav .visible-links { padding-left: 15ch; padding-right: 5rem; }
+	}
+</style>
+
+<!-- Balance nav paddings script moved to assets/js/nav-balance.js and loaded via _includes/scripts.html -->
 
 <!-- end custom head snippets -->

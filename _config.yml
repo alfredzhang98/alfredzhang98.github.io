@@ -9,10 +9,10 @@
 # Basic Site Settings
 locale                   : "en-GB"
 site_theme               : "air" # Currently available options are "default", "air"
-title                    : "Personal Website"
+title                    : "Home"
 title_separator          : "-"
 name                     : &name "Qingyu Zhang"
-description              : &description "I'm Qingyu Zhang, a PhD student at UCL. My research brings together circuit design, image processing, deep learning, and reinforcement learning to develop intelligent robotic systems for healthcare. I’m particularly interested in connecting hardware and algorithms to create systems that are both effective and practical in real-world use."
+# description              : &description "I'm Qingyu Zhang, a PhD student at UCL. My research brings together circuit design, image processing, deep learning, and reinforcement learning to develop intelligent robotic systems for healthcare. I’m particularly interested in connecting hardware and algorithms to create systems that are both effective and practical in real-world use."
 url                      : https://alfredzhang98.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "alfredzhang98/alfredzhang98.github.io"
@@ -25,7 +25,7 @@ author:
   avatar           : "profile.png"
   name             : "Qingyu Zhang"
   pronouns         : "he/him" # example: "he/him"
-  bio              : "Qingyu Zhang is a PhD student at UCL whose research integrates circuit design, image processing, and advanced machine learning methods to develop intelligent robotic systems for healthcare."
+  # bio              : "Qingyu Zhang is a PhD student at UCL whose research integrates circuit design, image processing, and advanced machine learning methods to develop intelligent robotic systems for healthcare."
   location         : "London, UK"
   employer         : "University College London"
   uri              : # URL
@@ -62,7 +62,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : qingyuzhang98
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
@@ -229,6 +229,9 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
+  news:
+    output: true
+    permalink: /:collection/:path/
 
 # These settings control how pages and collections are included in the site
 defaults:
@@ -285,6 +288,16 @@ defaults:
       layout: talk
       author_profile: true
       share: true
+
+  # _news
+  - scope:
+      path: ""
+      type: news
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
 
 
 # Sass/SCSS
