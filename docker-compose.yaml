@@ -3,6 +3,13 @@ services:
     image: jekyll-site
     build: .
     volumes: [ .:/usr/src/app ]
-    ports: [ 4000:4000 ]
+    ports: 
+      - "4000:4000"
+      - "35729:35729"  # LiveReload
+    environment:
+      - JEKYLL_ENV=development
+      - LISTEN_POLLING=true
+      - CHOKIDAR_USEPOLLING=true   # better file change detection in Docker on Windows
+      - WATCHPACK_POLLING=true
     user: 1000:1000
-    command: jekyll serve -H 0.0.0.0 -w
+    command: jekyll serve -H 0.0.0.0 -w -l --livereload-port 35729 --force_polling
