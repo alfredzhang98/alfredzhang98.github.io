@@ -14,4 +14,39 @@
 <link rel="icon" href="/images/favicon.ico"/>
 <meta name="theme-color" content="#ffffff"/>
 
+<!-- Header layout overrides: title left, nav center, theme toggle right -->
+<style>
+	/* Use the existing markup: first li = title, last li (#theme-toggle) = theme button */
+	.masthead__menu { position: relative; }
+	.greedy-nav .visible-links {
+		position: relative;
+		text-align: center; /* center the middle group */
+	}
+	.greedy-nav .visible-links > li {
+		display: inline-block; /* inline-block items center with text-align */
+		vertical-align: middle;
+	}
+	/* Title pinned to left */
+	.greedy-nav .visible-links > li:first-child {
+		position: absolute;
+		left: 0;
+	}
+	/* Theme toggle pinned to right; leave room for the hamburger button */
+	.greedy-nav .visible-links > li#theme-toggle {
+		position: absolute;
+		right: 3rem; /* 2.5rem button width + padding gap */
+	}
+	/* Tweak link spacing for inline-block layout */
+	.greedy-nav .visible-links > li a {
+		margin: 0 0.75rem;
+	}
+	/* Keep the underline hover effect nicely visible */
+	.greedy-nav .visible-links > li a:before {
+		bottom: -2px;
+	}
+	/* On very small screens, if overlap occurs, you can optionally hide middle links:
+		 @media (max-width: 420px) { .greedy-nav .visible-links > li:not(:first-child):not(#theme-toggle){ display:none; } }
+	*/
+</style>
+
 <!-- end custom head snippets -->
