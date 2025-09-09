@@ -1,0 +1,92 @@
+---
+layout: single
+title: "Projects"
+permalink: /projects/
+author_profile: true
+---
+
+{% include base_path %}
+
+<div class="projects-toolbar">
+  <div class="tags-filter" id="projects-tags"></div>
+</div>
+
+<div class="projects-grid" id="projects-grid">
+  {% assign items = site.projects | sort: 'date' | reverse %}
+  {% for p in items %}
+    {% assign text = p.summary | default: p.excerpt | default: p.content | strip_html | strip_newlines %}
+  {% assign preview = text | truncatewords: 20, '…' %}
+    <article class="project-card" data-tags="{{ p.tags | join: ',' }}" data-date="{{ p.date | date: '%Y-%m-%d' }}">
+      <a class="card-link" href="{{ p.url | relative_url }}">
+        <div class="card-media">
+          {% if p.cover %}
+            <img src="{{ p.cover | relative_url }}" alt="{{ p.title }} cover" loading="lazy" />
+          {% else %}
+            <div class="card-placeholder" aria-hidden="true"></div>
+          {% endif %}
+        </div>
+        <div class="card-body">
+          {% if p.tags and p.tags.size > 0 %}
+            <div class="card-chips">
+              {% for t in p.tags %}<span class="chip" data-tag="{{ t }}">{{ t }}</span>{% endfor %}
+            </div>
+          {% endif %}
+          <h3 class="card-title">{{ p.title }}</h3>
+          <div class="card-meta">{{ p.date | date: '%Y.%m.%d' }}</div>
+          <p class="card-preview">{{ preview }}</p>
+        </div>
+      </a>
+    </article>
+  {% endfor %}
+  {% if items == empty %}
+    <p>No projects yet.</p>
+  {% endif %}
+</div>
+
+<script>
+  (function(){
+    function buildTagSet(){
+      var set = new Set();
+      document.querySelectorAll('#projects-grid .project-card').forEach(function(card){
+        (card.dataset.tags || '').split(',').filter(Boolean).forEach(function(t){ set.add(t.trim()); });
+      });
+      return Array.from(set).sort();
+    }
+    function renderFilters(tags){
+      var wrap = document.getElementById('projects-tags');
+      if (!wrap) return;
+      var allBtn = document.createElement('button');
+      allBtn.className = 'pf-btn active';
+      allBtn.dataset.tag = '';
+      allBtn.textContent = 'All';
+      wrap.appendChild(allBtn);
+      tags.forEach(function(t){
+        var b = document.createElement('button');
+        b.className = 'pf-btn'; b.dataset.tag = t; b.textContent = t; wrap.appendChild(b);
+      });
+    }
+    function applyFilter(tag){
+      var cards = Array.from(document.querySelectorAll('#projects-grid .project-card'));
+      cards.forEach(function(c){
+        var tags = (c.dataset.tags || '').split(',').map(function(s){return s.trim();});
+        var show = !tag || tags.indexOf(tag) !== -1;
+        c.style.display = show ? '' : 'none';
+      });
+    }
+    function wire(){
+      var tags = buildTagSet();
+      renderFilters(tags);
+      var bar = document.getElementById('projects-tags');
+      if (!bar) return;
+      bar.addEventListener('click', function(e){
+        var btn = e.target.closest('.pf-btn');
+        if (!btn) return;
+        bar.querySelectorAll('.pf-btn').forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        applyFilter(btn.dataset.tag || '');
+      });
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire); else wire();
+  })();
+</script>
+

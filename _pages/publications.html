@@ -13,21 +13,24 @@ author_profile: true
 
 <!-- New style rendering if publication categories are defined -->
 {% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
+  {% for category in site.publication_category %}
+    {%- assign cat_items = site.publications | where: 'category', category[0] -%}
+    {%- assign ordered    = cat_items | where_exp: 'p', 'p.order != blank' | sort: 'order' -%}
+    {%- assign unordered  = cat_items | where_exp: 'p', 'p.order == blank' | sort: 'date' | reverse -%}
+    {%- assign items      = ordered | concat: unordered -%}
+
+    {% if items and items.size > 0 %}
+      <h2>{{ category[1].title }}</h2><hr />
+      {% for post in items %}
+        {% include archive-single.html %}
+      {% endfor %}
+    {% endif %}
   {% endfor %}
 {% else %}
-  {% for post in site.publications reversed %}
+  {%- assign ordered    = site.publications | where_exp: 'p', 'p.order != blank' | sort: 'order' -%}
+  {%- assign unordered  = site.publications | where_exp: 'p', 'p.order == blank' | sort: 'date' | reverse -%}
+  {%- assign items      = ordered | concat: unordered -%}
+  {% for post in items %}
     {% include archive-single.html %}
   {% endfor %}
 {% endif %}
