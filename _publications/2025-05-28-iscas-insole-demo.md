@@ -8,7 +8,7 @@ excerpt: 'This paper presents a high-resolution plantar pressure insole system i
 date: 2025-05-28
 venue: 'IEEE International Symposium on Circuits and Systems (ISCAS)'
 # slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
-paperurl: 'http://alfredzhang98.github.io/files/2025-05-28-iscas-insole.pdf'
+paperurl: 'http://alfredzhang98.github.io/files/2025-05-28-iscas-insole-demo.pdf'
 # bibtexurl: 'http://alfredzhang98.github.io/files/iscas25-insole.bib'
 citation: 'J. Chi, Q. Zhang, Z. Zhang, A. Demosthenous, and Y. Wu. &quot;Live Demonstration: A High-Resolution PlantarInsole System for Lower Body Estimation.&quot; <i>2025 IEEE International Symposium on Circuits and Systems (ISCAS)</i>, 2025.'
 order: 4
