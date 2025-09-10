@@ -1,8 +1,7 @@
 /* Custom overrides consolidated from head/custom.html */
 /* Sticky footer: make body a flex column so footer stays at the bottom */
 html, body { height: 100%; }
-/* Use dynamic viewport units to avoid OS UI gaps; fallback to 100vh */
-body { display: flex; min-height: 100vh; min-height: 100svh; flex-direction: column; }
+body { display: flex; min-height: 100vh; flex-direction: column; }
 /* Grow main content area for both default and custom layouts */
 #site-content, #main { flex: 1 0 auto; }
 /* Ensure floats in #main don't collapse its height (e.g., sidebar) */
