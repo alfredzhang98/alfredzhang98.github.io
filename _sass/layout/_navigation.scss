@@ -176,6 +176,13 @@
   position: relative;
   min-width: 250px;
   background: var(--global-bg-color);
+  
+  @media (max-width: 600px) {
+    /* 在移动设备上优化导航栏 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   a {
     display: block;
@@ -200,10 +207,103 @@
     color: #fff;
     cursor: pointer;
     z-index: 100;
+    
+    @media (max-width: 600px) {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      border-radius: 3px;
+    }
+    
+    .navicon {
+      position: relative;
+      width: 1.5rem;
+      height: 0.25rem;
+      background: #fff;
+      transition: background 0.2s ease-in-out;
+      
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 0.25rem;
+        background: #fff;
+        transition: all 0.2s ease-in-out;
+      }
+      
+      &::before { top: -0.5rem; }
+      &::after { bottom: -0.5rem; }
+    }
+    
+    &.close .navicon {
+      background: transparent;
+      
+      &::before {
+        transform: rotate(45deg);
+        top: 0;
+      }
+      
+      &::after {
+        transform: rotate(-45deg);
+        bottom: 0;
+      }
+    }
   }
 
   .visible-links {
     display: table;
+    
+    @media (max-width: 600px) {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--global-bg-color);
+      border: 1px solid var(--global-border-color);
+      border-top: none;
+      z-index: 50;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+      
+      &.show-mobile-menu {
+        display: block;
+      }
+      
+      li {
+        display: block !important;
+        text-align: left;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid var(--global-border-color);
+        
+        &:last-child {
+          border-bottom: none;
+        }
+        
+        &.masthead__menu-item--lg {
+          position: relative !important;
+          left: auto !important;
+          top: auto !important;
+          transform: none !important;
+        }
+        
+        &#theme-toggle {
+          position: relative !important;
+          right: auto !important;
+          top: auto !important;
+          transform: none !important;
+        }
+        
+        a {
+          display: block;
+          padding: 0.5rem 1rem;
+          margin: 0;
+        }
+      }
+    }
 
     li {
       display: table-cell;
@@ -283,6 +383,13 @@
     border-radius: $border-radius;
     background: #fff;
     box-shadow: 0 0 10px rgba(#000, 0.25);
+    
+    @media (max-width: 600px) {
+      width: 100%;
+      left: 0;
+      right: 0;
+      margin-top: 0;
+    }
 
     a {
       margin: 0;

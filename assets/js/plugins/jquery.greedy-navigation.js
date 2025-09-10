@@ -14,6 +14,16 @@ var $hlinks = $('#site-nav .hidden-links');
 var breaks = [];
 
 function updateNav() {
+  // 检查是否为移动设备
+  var isMobile = window.innerWidth <= 600;
+  
+  // 在移动设备上，始终显示汉堡菜单按钮
+  if (isMobile) {
+    $btn.removeClass('hidden');
+    // 确保菜单默认是隐藏的
+    $vlinks.removeClass('show-mobile-menu');
+    return;
+  }
 
   var availableSpace = $btn.hasClass('hidden') ? $nav.width() : $nav.width() - $btn.width() - 30;
 
@@ -79,8 +89,15 @@ screen.orientation.addEventListener("change", function () {
 });
 
 $btn.on('click', function () {
-  $hlinks.toggleClass('hidden');
-  $(this).toggleClass('close');
+  // 在移动设备上切换可见链接的显示
+  if (window.innerWidth <= 600) {
+    $vlinks.toggleClass('show-mobile-menu');
+    $(this).toggleClass('close');
+  } else {
+    // 在桌面设备上保持原有行为
+    $hlinks.toggleClass('hidden');
+    $(this).toggleClass('close');
+  }
 });
 
 updateNav();
