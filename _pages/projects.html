@@ -12,11 +12,31 @@ author_profile: true
 </div>
 
 <div class="projects-grid" id="projects-grid">
-  {% assign items = site.projects | sort: 'date' | reverse %}
+  {%- assign ordered = site.projects | where_exp: 'p', 'p.order != nil' | sort: 'order' -%}
+  {%- assign unordered = site.projects | where_exp: 'p', 'p.order == nil' | sort: 'date' | reverse -%}
+  {%- assign items = ordered | concat: unordered -%}
   {% for p in items %}
+    {%- assign now_ymd = site.time | date: '%Y%m%d' -%}
+    {%- assign start_raw = p.start | default: '' -%}
+    {%- assign start_dash = start_raw | replace: '.', '-' | replace: '/', '-' -%}
+    {%- assign start_ymd = start_dash | date: '%Y%m%d' -%}
+    {%- assign end_raw = p.end | default: '' -%}
+    {%- assign end_lc = end_raw | downcase -%}
+    {%- if end_raw and end_lc != 'present' and end_lc != 'now' -%}
+      {%- assign end_dash = end_raw | replace: '.', '-' | replace: '/', '-' -%}
+      {%- assign end_ymd = end_dash | date: '%Y%m%d' -%}
+    {%- else -%}
+      {%- assign end_ymd = now_ymd -%}
+    {%- endif -%}
+    {%- assign ongoing = false -%}
+    {%- if start_ymd and start_ymd != '' -%}
+      {%- if start_ymd <= now_ymd and now_ymd <= end_ymd -%}
+        {%- assign ongoing = true -%}
+      {%- endif -%}
+    {%- endif -%}
     {% assign text = p.summary | default: p.excerpt | default: p.content | strip_html | strip_newlines %}
   {% assign preview = text | truncatewords: 20, '…' %}
-    <article class="project-card" data-tags="{{ p.tags | join: ',' }}" data-date="{{ p.date | date: '%Y-%m-%d' }}">
+  <article class="project-card{% if ongoing %} ongoing{% endif %}" data-tags="{{ p.tags | join: ',' }}" data-date="{{ p.date | date: '%Y-%m-%d' }}" data-ongoing="{{ ongoing }}">
       <a class="card-link" href="{{ p.url | relative_url }}">
         <div class="card-media">
           {% if p.cover %}
@@ -32,7 +52,46 @@ author_profile: true
             </div>
           {% endif %}
           <h3 class="card-title">{{ p.title }}</h3>
-          <div class="card-meta">{{ p.date | date: '%Y.%m.%d' }}</div>
+          {% assign has_range = p.start or p.end %}
+          {% if has_range %}
+            {% assign start_str = p.start | date: '%Y.%m' %}
+            {% if p.end %}
+              {% assign end_lc = p.end | downcase %}
+              {% if end_lc == 'present' or end_lc == 'now' %}
+                {% assign end_str = 'Until now' %}
+              {% else %}
+                {% assign end_str = p.end | date: '%Y.%m' %}
+              {% endif %}
+            {% endif %}
+            <div class="card-meta">{{ start_str }} — {{ end_str | default: 'Until now' }}</div>
+          {% else %}
+            <div class="card-meta">{{ p.date | date: '%Y.%m.%d' }}</div>
+          {% endif %}
+          {% if p.funding %}
+            <div class="card-funding"><span class="label">Funding:</span>
+              {%- assign funds = p.funding | split: ';' -%}
+              {%- assign rendered = 0 -%}
+              {%- assign extras = 0 -%}
+              {%- assign extras_list = '' -%}
+              {%- for f in funds -%}
+                {%- assign item = f | strip -%}
+                {%- if item != '' -%}
+                  {%- if rendered < 2 -%}
+                    <span class="funding-chip">{{ item }}</span>
+                    {%- assign rendered = rendered | plus: 1 -%}
+                  {%- else -%}
+                    {%- assign extras = extras | plus: 1 -%}
+                    {%- if extras_list == '' -%}
+                      {%- assign extras_list = item -%}
+                    {%- else -%}
+                      {%- assign extras_list = extras_list | append: ', ' | append: item -%}
+                    {%- endif -%}
+                  {%- endif -%}
+                {%- endif -%}
+              {%- endfor -%}
+              {%- if extras > 0 -%}<span class="funding-chip more" title="{{ extras_list }}">+{{ extras }}</span>{%- endif -%}
+            </div>
+          {% endif %}
           <p class="card-preview">{{ preview }}</p>
         </div>
       </a>
