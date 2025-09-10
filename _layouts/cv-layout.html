@@ -11,9 +11,8 @@ layout: compress
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %} | {{ site.name | default: site.title }}</title>
-    {% include head.html %}
-    {% include head/custom.html %}
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/cv-layout.css">
+  {% include head.html %}
+  {% include head/custom.html %}
   </head>
 
   <body class="cv-layout">
@@ -22,6 +21,9 @@ layout: compress
 
     <div id="main" role="main">
       <div class="container">
+        {% unless page.header.overlay_color or page.header.overlay_image %}
+          <h1 class="page__title" style="text-align:center; margin-bottom: .85rem;">{{ page.title }}</h1>
+        {% endunless %}
         {{ content }}
       </div>
     </div>

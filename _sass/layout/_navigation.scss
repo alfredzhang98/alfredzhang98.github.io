@@ -226,12 +226,25 @@
     }
 
     #theme-toggle {
-      a {
-        width: 25px;
-        display: flex;
-        justify-content: center;
-        cursor: pointer;
+      #lang-switch { display:flex; align-items:center; gap:.25rem; }
+      #lang-switch .sep { color: var(--global-masthead-link-color); opacity:.6; }
+      #lang-switch .lang-btn {
+        padding: .1rem .45rem; border: 1px solid var(--global-border-color);
+        border-radius: 6px; font-size: .85rem; line-height: 1; text-decoration:none;
+        display:inline-flex; align-items:center; justify-content:center;
+        transition: transform .12s ease, background-color .15s ease, box-shadow .15s ease, color .15s ease, border-color .15s ease;
       }
+      /* Remove default nav underline effect */
+      #lang-switch .lang-btn::before { content: none !important; }
+      /* No hover color/underline */
+      #lang-switch .lang-btn:hover { background: none; color: inherit; box-shadow: none; text-decoration: none; }
+      #lang-switch .lang-btn:focus { outline: none; box-shadow: 0 0 0 2px rgba(26,115,232,.18); }
+      /* Active visual (blue) */
+      #lang-switch .lang-btn.active {
+        background: #1a73e8; color: #fff; border-color: #1a73e8;
+        animation: lang-pop .18s ease-out;
+      }
+      @keyframes lang-pop { from { transform: scale(.94); } to { transform: scale(1); } }
     }
 
     a {
