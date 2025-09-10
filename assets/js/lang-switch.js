@@ -120,43 +120,35 @@
       }, 'google_translate_element');
     } catch(e){}
   }
-  function waitForCombo(maxWait){
-    return new Promise(function(resolve){
-      var start = Date.now();
-      (function poll(){
-        var select = document.querySelector('.goog-te-combo');
-        if (select) return resolve(select);
-        if (Date.now() - start > (maxWait || 5000)) return resolve(null);
-        setTimeout(poll, 100);
-      })();
-    });
+  // Cookie-based switch: set googtrans and reload for a reliable one-click full translate
+  function setTranslateCookie(lang){
+    try {
+      var val = '/en/' + (lang || 'en');
+      var host = window.location.hostname;
+      // set for current host
+      document.cookie = 'googtrans=' + val + ';path=/;max-age=31536000';
+      // set for dot-domain (helps on some hosts)
+      if (host && host.indexOf('.') !== -1) {
+        document.cookie = 'googtrans=' + val + ';path=/;domain=.' + host + ';max-age=31536000';
+      }
+    } catch(e){}
+  }
+  function getTranslateLang(){
+    try {
+      var m = document.cookie.match(/(?:^|; )googtrans=([^;]+)/);
+      if (!m) return 'en';
+      var v = decodeURIComponent(m[1]);
+      var parts = v.split('/');
+      return parts[2] || 'en';
+    } catch(e){ return 'en'; }
   }
   function switchTo(lang){
-    waitForCombo(6000).then(function(select){
-    if (!select) return; // translator not ready; silently abort (no partial UI updates)
-      function fire(val){
-        select.value = val;
-        select.dispatchEvent(new Event('change'));
-      }
-      // If current value already equals target, toggle to the other language then back to force a full re-translate
-      var other = (lang === 'zh-CN') ? 'en' : 'zh-CN';
-      if (select.value === lang) {
-        fire(other);
-        setTimeout(function(){ fire(lang); }, 100);
-      } else {
-        fire(lang);
-      }
+    setTranslateCookie(lang);
     try { localStorage.setItem('site_lang', lang); } catch(e){}
-    setLangActive(lang);
-    fixLangSwitchLabels();
-    // Apply name and tag fixes shortly after translation kicks in
-    setTimeout(function(){ fixLangSwitchLabels(); setAuthorName(lang); setTagLabels(lang); replaceNameInContent(lang); }, 600);
-    setTimeout(function(){ fixLangSwitchLabels(); setAuthorName(lang); setTagLabels(lang); replaceNameInContent(lang); }, 1500);
-    setTimeout(function(){ fixLangSwitchLabels(); setAuthorName(lang); setTagLabels(lang); replaceNameInContent(lang); }, 3000);
-      setTimeout(function(){ fixLangSwitchLabels(); setAuthorName(lang); setTagLabels(lang); replaceNameInContent(lang); }, 4500);
-      setTimeout(function(){ fixLangSwitchLabels(); setAuthorName(lang); setTagLabels(lang); replaceNameInContent(lang); }, 7000);
-    startNameFixObserver(lang);
-    });
+    // Keep UI responsive and consistent after reload
+    setLangActive(lang); fixLangSwitchLabels();
+    // A quick hint for users before reload
+    setTimeout(function(){ window.location.reload(); }, 10);
   }
   function ensureHiddenUI(){
     var css = document.getElementById('gt-hide-style');
@@ -181,16 +173,12 @@
     document.body.appendChild(host);
   loadGoogleTranslate(function(){
       initTranslate();
+      var cookieLang = getTranslateLang();
       var saved = null; try { saved = localStorage.getItem('site_lang'); } catch(e){}
-      if (saved) {
-        // wait for translator to be ready before switching to saved language
-        waitForCombo(6000).then(function(){ switchTo(saved); });
-      }
-      // If no saved, ensure default English name and persist
-      if (!saved) {
-        setAuthorName('en'); setTagLabels('en'); setLangActive('en'); replaceNameInContent('en'); fixLangSwitchLabels();
-        try { localStorage.setItem('site_lang', 'en'); } catch(e){}
-      }
+      var current = saved || cookieLang || 'en';
+      setLangActive(current);
+      fixLangSwitchLabels(); setAuthorName(current); setTagLabels(current); replaceNameInContent(current);
+      if (!saved) { try { localStorage.setItem('site_lang', current); } catch(e){} }
     });
     var bar = document.getElementById('lang-switch');
     if (bar){
