@@ -1,4 +1,11 @@
 /* Custom overrides consolidated from head/custom.html */
+/* Sticky footer: flex column layout so footer stays at the bottom */
+html, body { height: 100%; }
+body { display: flex; min-height: 100vh; flex-direction: column; }
+/* Grow main content area for both default layout (#site-content) and others (#main) */
+#site-content, #main { flex: 1 0 auto; }
+/* Ensure floats inside #main are contained (e.g., sidebar) */
+#main { display: flow-root; }
 /* Sticky footer: make body a flex column so footer stays at the bottom */
 html, body { height: 100%; }
 body { display: flex; min-height: 100vh; flex-direction: column; }

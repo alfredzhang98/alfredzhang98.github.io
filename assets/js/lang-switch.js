@@ -120,11 +120,32 @@
       }, 'google_translate_element');
     } catch(e){}
   }
+  function waitForCombo(maxWait){
+    return new Promise(function(resolve){
+      var start = Date.now();
+      (function poll(){
+        var select = document.querySelector('.goog-te-combo');
+        if (select) return resolve(select);
+        if (Date.now() - start > (maxWait || 5000)) return resolve(null);
+        setTimeout(poll, 100);
+      })();
+    });
+  }
   function switchTo(lang){
-    var select = document.querySelector('.goog-te-combo');
-    if (!select) return;
-    select.value = lang;
-    select.dispatchEvent(new Event('change'));
+    waitForCombo(6000).then(function(select){
+    if (!select) return; // translator not ready; silently abort (no partial UI updates)
+      function fire(val){
+        select.value = val;
+        select.dispatchEvent(new Event('change'));
+      }
+      // If current value already equals target, toggle to the other language then back to force a full re-translate
+      var other = (lang === 'zh-CN') ? 'en' : 'zh-CN';
+      if (select.value === lang) {
+        fire(other);
+        setTimeout(function(){ fire(lang); }, 100);
+      } else {
+        fire(lang);
+      }
     try { localStorage.setItem('site_lang', lang); } catch(e){}
     setLangActive(lang);
     fixLangSwitchLabels();
@@ -132,7 +153,10 @@
     setTimeout(function(){ fixLangSwitchLabels(); setAuthorName(lang); setTagLabels(lang); replaceNameInContent(lang); }, 600);
     setTimeout(function(){ fixLangSwitchLabels(); setAuthorName(lang); setTagLabels(lang); replaceNameInContent(lang); }, 1500);
     setTimeout(function(){ fixLangSwitchLabels(); setAuthorName(lang); setTagLabels(lang); replaceNameInContent(lang); }, 3000);
+      setTimeout(function(){ fixLangSwitchLabels(); setAuthorName(lang); setTagLabels(lang); replaceNameInContent(lang); }, 4500);
+      setTimeout(function(){ fixLangSwitchLabels(); setAuthorName(lang); setTagLabels(lang); replaceNameInContent(lang); }, 7000);
     startNameFixObserver(lang);
+    });
   }
   function ensureHiddenUI(){
     var css = document.getElementById('gt-hide-style');
@@ -159,12 +183,12 @@
       initTranslate();
       var saved = null; try { saved = localStorage.getItem('site_lang'); } catch(e){}
       if (saved) {
-        setLangActive(saved);
-        setTimeout(function(){ switchTo(saved); }, 700);
+        // wait for translator to be ready before switching to saved language
+        waitForCombo(6000).then(function(){ switchTo(saved); });
       }
       // If no saved, ensure default English name and persist
       if (!saved) {
-    setAuthorName('en'); setTagLabels('en'); setLangActive('en'); replaceNameInContent('en'); fixLangSwitchLabels();
+        setAuthorName('en'); setTagLabels('en'); setLangActive('en'); replaceNameInContent('en'); fixLangSwitchLabels();
         try { localStorage.setItem('site_lang', 'en'); } catch(e){}
       }
     });
