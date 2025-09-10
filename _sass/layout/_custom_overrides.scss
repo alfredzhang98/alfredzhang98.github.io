@@ -6,13 +6,6 @@ body { display: flex; min-height: 100vh; flex-direction: column; }
 #site-content, #main { flex: 1 0 auto; }
 /* Ensure floats inside #main are contained (e.g., sidebar) */
 #main { display: flow-root; }
-/* Sticky footer: make body a flex column so footer stays at the bottom */
-html, body { height: 100%; }
-body { display: flex; min-height: 100vh; flex-direction: column; }
-/* Grow main content area for both default and custom layouts */
-#site-content, #main { flex: 1 0 auto; }
-/* Ensure floats in #main don't collapse its height (e.g., sidebar) */
-#main { display: flow-root; }
 
 /* Header layout overrides moved back to _includes/head/custom.html */
 
