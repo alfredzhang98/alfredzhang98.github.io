@@ -20,12 +20,22 @@ layout: compress
     {% include masthead.html %}
 
     <div id="main" role="main">
-      <div class="container">
-        {% unless page.header.overlay_color or page.header.overlay_image %}
-          <h1 class="page__title" style="text-align:center; margin-bottom: .85rem;">{{ page.title }}</h1>
-        {% endunless %}
-        {{ content }}
-      </div>
+      {% include sidebar.html %}
+
+      <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+        {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+        <div class="page__inner-wrap">
+          {% unless page.header.overlay_color or page.header.overlay_image %}
+            <header>
+              {% if page.title %}<h1 class="page__title" itemprop="headline" style="text-align:center;">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
+            </header>
+          {% endunless %}
+
+          <section class="page__content" itemprop="text">
+            {{ content }}
+          </section>
+        </div>
+      </article>
     </div>
 
     <div class="page__footer">
