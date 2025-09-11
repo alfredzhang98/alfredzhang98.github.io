@@ -4,7 +4,8 @@
     if(!nav) return;
     var titleLi = nav.querySelector('li:first-child');
     var themeLi = nav.querySelector('li#theme-toggle');
-    var hamburger = document.querySelector('#site-nav .greedy-nav__toggle') || document.querySelector('.greedy-nav__toggle');
+  // Use the actual hamburger button in our markup
+  var hamburger = document.querySelector('#site-nav button.hamburger');
     var leftW = titleLi ? Math.ceil(titleLi.getBoundingClientRect().width) : 0;
     var rightW = 0;
     if (themeLi) rightW += Math.ceil(themeLi.getBoundingClientRect().width);

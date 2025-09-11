@@ -5,7 +5,7 @@
 .masthead {
   position: fixed;
   background: var(--global-bg-color);
-  height: fit-content;
+  height: auto;
   top: 0;
   width: 100%;
 
@@ -27,7 +27,7 @@
   &__inner-wrap {
     @include container;
     @include clearfix;
-    padding: 0.5em 1em;
+  padding: 0.5em 1.5em; /* add a bit more right padding for hamburger */
     font-family: $sans-serif-narrow;
 
     @include breakpoint($x-large) {
@@ -36,6 +36,7 @@
 
     nav {
       z-index: 10;
+  min-height: 44px; /* ensure enough height for buttons and links */
     }
 
     a {
@@ -55,7 +56,7 @@
 }
 
 .masthead__menu-item {
-  background-color: var(--global-bg-color);
+  background-color: transparent; /* avoid grey blocks in dropdown */
   display: block;
   list-style-type: none;
   white-space: nowrap;
@@ -65,3 +66,4 @@
     font-weight: 700;
   }
 }
+

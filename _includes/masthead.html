@@ -3,10 +3,10 @@
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        <button><div class="navicon"></div></button>
+      <nav id="site-nav" class="greedy-nav" aria-label="Primary">
+        <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="hidden-menu"><div class="navicon"></div></button>
         <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg persist"><a href="{{ base_path }}/">{{ site.title }}</a></li>
+          <li class="masthead__menu-item masthead__menu-item--lg persist"><a href="{{ base_path }}/">Home</a></li>
           {% for link in site.data.navigation.main %}
             {% if link.url contains 'http' %}
               {% assign domain = '' %}
@@ -23,7 +23,7 @@
             </div>
           </li>
         </ul>
-        <ul class="hidden-links hidden"></ul>
+  <ul id="hidden-menu" class="hidden-links hidden"></ul>
       </nav>
     </div>
   </div>
