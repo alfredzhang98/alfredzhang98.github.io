@@ -49,6 +49,26 @@ Conventional image-guided needle insertion with US/CT/MRI still relies heavily o
 - Sub-millimetre precision across 24 trials with 0.66 mm RMS error.
 - Real-time feedback at >100 Hz sampling.
 
+## Hardware Recording
+
+The project involved progressive hardware development from single-channel to multi-channel bioimpedance measurement systems:
+
+### Version 1: Four-wire Single Channel
+Initial prototype implementing standard four-wire bioimpedance measurement with dedicated excitation and sensing paths for baseline tissue characterization.
+
+<div class="project-image">
+  <img src="/images/projects/pcbs/binh_1_v1.png" alt="BINH v1 PCB - Single channel four-wire measurement" style="max-width: 100%; height: auto;">
+</div>
+
+### Version 2: 16-Channel Multiplexed System
+Advanced multi-channel design enabling independent channel selection across 16 measurement points, allowing for spatial bioimpedance mapping and enhanced tissue discrimination.
+
+<div class="project-image">
+  <img src="/images/projects/pcbs/binh_16_v2.png" alt="BINH v2 PCB - 16-channel multiplexed measurement system" style="max-width: 100%; height: auto;">
+</div>
+
+
+
 ## Impact
 
 The platform establishes the foundation for next-generation minimally invasive procedures. It targets CVC, targeted drug delivery, biopsy guidance, and neuro-interventions, aiming to reduce workflow complexity while improving patient safety and outcomes.
