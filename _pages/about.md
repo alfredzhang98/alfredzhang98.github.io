@@ -57,7 +57,7 @@ redirect_from:
     <li data-start="2016-09" data-end="2020-06">
       <div class="timeline-dot"></div>
       <div class="timeline-content">
-        <h3>BEng in Optical Information Science and Technology <span class="tl-date">2016.09 — 2020.06</span></h3>
+        <h3>BEng in Optical and Electronical Information Science Technology <span class="tl-date">2016.09 — 2020.06</span></h3>
         <p><i class="fa-solid fa-university" aria-hidden="true"></i> Huazhong University of Science and Technology · Outstanding Graduate · GPA: 3.23/4.0</p>
       </div>
     </li>
