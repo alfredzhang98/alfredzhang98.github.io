@@ -1,25 +1,19 @@
 ---
-title: "Multimodal Smart Insole with Crossbar Crosstalk Compensation for Fall-Risk Prediction"
+title: "A 0.62 μW/sensor 82 fps Time-to-Digital Impedance Measurement IC with Unified Excitation/Readout Front-End for Large-Scale Piezo-Resistive Sensor Array"
 collection: publications
 category: conferences
 permalink: /publication/2025-09-03-isscc-insoleasic
 show_excerpt: false
-excerpt: 'We present a portable multimodal smart insole (253 pressure sensors + 6‑DoF IMU) with a U‑Net crossbar crosstalk remover and a 3D‑CNN + Transformer pipeline that jointly regresses pose and predicts fall risk with up to 91% accuracy.'
+excerpt: 'This paper presents a highly efficient time-to-digital impedance measurement IC featuring unified excitation/readout front-end for large-scale piezo-resistive sensor arrays.'
 date: 2025-09-03
-venue: 'IEEE International Symposium on Circuits and Systems (ISCAS)'
-# slidesurl: ''
-# paperurl: ''
-# bibtexurl: ''
-citation: 'J. Chi, Z. Zhang, Q. Zhang, A. Demosthenous, and Y. Wu. &quot;Multimodal Smart Insole with Crossbar Crosstalk Compensation for Fall-Risk Prediction.&quot; <i>Submitted to IEEE International Symposium on Circuits and Systems (ISCAS)</i>, 2025.'
-order: 102
+venue: 'IEEE International Solid-State Circuits Conference (ISSCC)'
+# slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
+# paperurl: 'http://alfredzhang98.github.io/files/2025-09-03-isscc-insoleasic.pdf'
+# bibtexurl: 'http://alfredzhang98.github.io/files/isscc26-insoleasic.bib'
+citation: 'J. Li, Q. Zhang, D. Jiang, S. Ha, A. Demosthenous, and Y. Wu. &quot;A 0.62 μW/sensor 82 fps Time-to-Digital Impedance Measurement IC with Unified Excitation/Readout Front-End for Large-Scale Piezo-Resistive Sensor Array.&quot; <i>Submitted to IEEE International Solid-State Circuits Conference (ISSCC)</i>, 2026.'
+order: 99
 ---
 
-**Status:** This paper has been submitted to IEEE International Symposium on Circuits and Systems (ISCAS) and is currently under review.
+**Status:** This paper has been submitted to IEEE ISSCC 2026 and is currently under review. Results will be announced once the review process is complete.
 
-We present a portable multimodal smart insole that fuses a 253‑sensor plantar pressure array with a 6‑DoF IMU and an end‑to‑end deep learning pipeline for fall‑risk prediction. A double‑frame sensing scheme with offset calibration extends dynamic range and stabilizes initial resistance. To suppress crossbar sneak‑path crosstalk a compact U‑Net (33×15 input) reconstructs clean pressure maps (R² = 0.9307). The denoised pressure maps and IMU signals feed a 3D‑CNN + Transformer encoder for joint pose regression (13×3) and fall‑risk prediction, achieving up to 91% accuracy and enabling time‑aware early warnings when a person's fall probability steadily increases.
-
-## My Role in This Work
-
-1. Surpervised the two students on the first and second authors to design the insole hardware and develop the deep learning algorithms.
-2. Contributed to the idea of using U-Net for crosstalk removal in the crossbar array.
-3. Assisted in paper structuring and writing and drawing figures.
+This work presents a highly energy-efficient time-to-digital impedance measurement integrated circuit designed specifically for large-scale piezo-resistive sensor arrays. The proposed IC achieves remarkable performance with only 0.62 μW power consumption per sensor while maintaining a high sampling rate of 82 fps. The unified excitation/readout front-end architecture enables scalable sensor interfacing for applications requiring dense sensor arrays with real-time impedance monitoring capabilities.
