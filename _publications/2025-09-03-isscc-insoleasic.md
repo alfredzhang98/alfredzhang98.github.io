@@ -17,3 +17,11 @@ order: 99
 **Status:** This paper has been submitted to IEEE ISSCC 2026 and is currently under review. Results will be announced once the review process is complete.
 
 This work presents a highly energy-efficient time-to-digital impedance measurement integrated circuit designed specifically for large-scale piezo-resistive sensor arrays. The proposed IC achieves remarkable performance with only 0.62 μW power consumption per sensor while maintaining a high sampling rate of 82 fps. The unified excitation/readout front-end architecture enables scalable sensor interfacing for applications requiring dense sensor arrays with real-time impedance monitoring capabilities.
+
+
+# My Role in This Work
+1. Basic on the designed IC, I used FPGA to verify the functionality of the whole system including the insole sensor array, the readout IC, and the data processing unit.
+2. Design the way to calibrate the measured impedance to ensure accurate readings across all sensors in the array.
+3. Design the readout algorithm to process the raw data from the IC and convert it into meaningful impedance values for further analysis.
+4. Apply the converted impedance data in downstream applications, such as gait analysis and health monitoring, to demonstrate the practical utility of the sensor array system.
+5. Design related hardware and software system on a portable platform (NRF52840 + ASIC + IMU + power management).
