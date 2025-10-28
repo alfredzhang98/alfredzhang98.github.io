@@ -10,7 +10,7 @@ venue: 'IEEE International Symposium on Circuits and Systems (ISCAS)'
 # slidesurl: ''
 # paperurl: ''
 # bibtexurl: ''
-citation: 'J. Chi, Z. Zhang, Q. Zhang, A. Demosthenous, and Y. Wu. &quot;Multimodal Smart Insole with Crossbar Crosstalk Compensation for Fall-Risk Prediction.&quot; <i>Submitted to IEEE International Symposium on Circuits and Systems (ISCAS)</i>, 2025.'
+citation: 'J. Chi, Z. Zhang, Q. Zhang, A. Demosthenous, and Y. Wu. &quot;Multimodal Smart Insole with Crossbar Crosstalk Compensation for Fall-Risk Prediction.&quot; <i>Submitted to IEEE International Symposium on Circuits and Systems (ISCAS)</i>, 2026.'
 order: 102
 ---
 
