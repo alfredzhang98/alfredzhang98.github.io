@@ -10,7 +10,7 @@ venue: 'IEEE International Symposium on Circuits and Systems (ISCAS)'
 # slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
 paperurl: 'http://alfredzhang98.github.io/files/2025-05-28-iscas-haptic.pdf'
 # bibtexurl: 'http://alfredzhang98.github.io/files/iscas25-haptic.bib'
-citation: 'Q. Zhang, A. Al-Hindawi, A. Demosthenous, and Y. Wu. &quot;Haptic-Enhanced Bioimpedance Needle for Precision Navigation in Central Venous Catheterisation with Millimetre Accuracy.&quot; <i>2025 IEEE International Symposium on Circuits and Systems (ISCAS)</i>, 2025.'
+citation: 'Q. Zhang, A. Al-Hindawi, A. Demosthenous, and Y. Wu, &quot;Haptic-Enhanced Bioimpedance Needle for Precision Navigation in Central Venous Catheterisation with Millimetre Accuracy,&quot; in <i>Proc. IEEE Int. Symp. Circuits Syst. (ISCAS)</i>, 2025.'
 order: 88
 ---
 

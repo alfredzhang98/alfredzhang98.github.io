@@ -10,7 +10,7 @@ venue: 'IEEE International Symposium on Circuits and Systems (ISCAS)'
 # slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
 paperurl: 'http://alfredzhang98.github.io/files/2025-05-28-iscas-haptic-demo.pdf'
 # bibtexurl: 'http://alfredzhang98.github.io/files/iscas25-haptic.bib'
-citation: 'J. Zhang, Q. Zhang, Y. Wu, D. Jiang, and A. Demosthenous. &quot;A Method for Improving the Wearability of Capsule Positioning System Using Particle Filter.&quot; <i>2025 IEEE International Symposium on Circuits and Systems (ISCAS)</i>, 2025.'
+citation: 'J. Zhang, Q. Zhang, Y. Wu, D. Jiang, and A. Demosthenous, &quot;A Method for Improving the Wearability of Capsule Positioning System Using Particle Filter,&quot; in <i>Proc. IEEE Int. Symp. Circuits Syst. (ISCAS)</i>, 2025.'
 order: 199
 ---
 

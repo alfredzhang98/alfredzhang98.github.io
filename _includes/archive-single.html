@@ -57,8 +57,9 @@
   {% endif %}
     
     {% if post.citation %}
+      {% assign citation_display = post.citation | replace: 'Q. Zhang', '<strong>Q. Zhang</strong>' | replace: 'Qingyu Zhang', '<strong>Qingyu Zhang</strong>' %}
       <p data-citation="{{ post.citation | escape }}">
-  {{ post.citation }}
+  {{ citation_display }}
   <button type="button" class="citation-copy-btn" title="Copy citation"><i class="fa fa-copy" aria-hidden="true"></i><span class="sr-only">Copy</span></button>
         {% if post.paperurl or post.slidesurl or post.bibtexurl %}<br />{% endif %}
         {% if post.paperurl %}<a href="{{ post.paperurl }}">Download Paper</a>{% endif %}
