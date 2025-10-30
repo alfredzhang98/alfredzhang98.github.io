@@ -2,7 +2,7 @@
 title: "Live Demonstration: A High-Resolution PlantarInsole System for Lower Body Estimation"
 collection: publications
 category: conferences
-permalink: /publication/2025-05-28-iscas-insole
+permalink: /publication/2025-05-28-iscas-insole-demo
 show_excerpt: false
 excerpt: 'This paper presents a high-resolution plantar pressure insole system integrated with machine learning models to provide detailed lower body biomechanical analysis.'
 date: 2025-05-28
