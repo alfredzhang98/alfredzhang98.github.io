@@ -70,7 +70,7 @@ redirect_from:
     <li data-start="2021-02" data-end="2021-12">
       <div class="timeline-dot"></div>
       <div class="timeline-content">
-        <h3>AIoT Engineer <span class="tl-date">2021.02 — 2021.12</span></h3>
+        <h3>Senior IoT Engineer <span class="tl-date">2021.02 — 2021.12</span></h3>
         <p><i class="fa-solid fa-building" aria-hidden="true"></i> New Oriental Education &amp; Technology Group · Full-time · Beijing, China</p>
         <p>Skills: Internet of Things (IoT), C/C++ (Programming Language), Android Development, Linux,</p>
   </div>
