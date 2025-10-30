@@ -7,6 +7,7 @@ show_excerpt: false
 excerpt: 'We present a portable multimodal smart insole (253 pressure sensors + 6‑DoF IMU) with a U‑Net crossbar crosstalk remover and a 3D‑CNN + Transformer pipeline that jointly regresses pose and predicts fall risk with up to 91% accuracy.'
 date: 2025-10-27
 venue: 'IEEE International Symposium on Circuits and Systems (ISCAS)'
+publish_year: 2026
 # slidesurl: ''
 # paperurl: ''
 # bibtexurl: ''

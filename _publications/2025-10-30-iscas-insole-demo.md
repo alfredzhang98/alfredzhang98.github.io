@@ -7,6 +7,7 @@ show_excerpt: false
 excerpt: 'Live demo of a high‑resolution plantar sensing system with crossbar crosstalk compensation enabling fine‑grained human–machine interaction (HMI).'
 date: 2025-10-30
 venue: 'IEEE International Symposium on Circuits and Systems (ISCAS)'
+publish_year: 2026
 # slidesurl: ''
 # paperurl: ''
 # bibtexurl: ''

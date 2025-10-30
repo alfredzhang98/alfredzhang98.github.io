@@ -7,6 +7,7 @@ show_excerpt: false
 excerpt: 'This paper presents a highly efficient time-to-digital impedance measurement IC featuring unified excitation/readout front-end for large-scale piezo-resistive sensor arrays.'
 date: 2025-09-03
 venue: 'IEEE International Solid-State Circuits Conference (ISSCC)'
+publish_year: 2026
 # slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
 # paperurl: 'http://alfredzhang98.github.io/files/2025-09-03-isscc-insoleasic.pdf'
 # bibtexurl: 'http://alfredzhang98.github.io/files/isscc26-insoleasic.bib'

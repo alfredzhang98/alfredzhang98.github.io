@@ -7,6 +7,7 @@ show_excerpt: false
 excerpt: 'This paper presents a novel method for enhancing the wearability of a capsule positioning system through the application of particle filter techniques.'
 date: 2025-05-28
 venue: 'IEEE International Symposium on Circuits and Systems (ISCAS)'
+publish_year: 2025
 # slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
 paperurl: 'http://alfredzhang98.github.io/files/2025-05-28-iscas-haptic-demo.pdf'
 # bibtexurl: 'http://alfredzhang98.github.io/files/iscas25-haptic.bib'
