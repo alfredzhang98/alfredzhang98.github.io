@@ -2,7 +2,7 @@
 title: "Live Demonstration: Haptic-Enhanced Bioimpedance Needle for Assisting Central Venous Catheterisation"
 collection: publications
 category: conferences
-permalink: /publication/2025-05-28-iscas-haptic
+permalink: /publication/2025-05-28-iscas-haptic-demo
 show_excerpt: false
 excerpt: 'This paper presents a novel haptic-enhanced bioimpedance needle for precise navigation during central venous catheterisation, achieving millimetre-level accuracy.'
 date: 2025-05-28
