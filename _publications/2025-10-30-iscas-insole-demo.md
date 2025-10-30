@@ -10,7 +10,7 @@ venue: 'IEEE International Symposium on Circuits and Systems (ISCAS)'
 # slidesurl: ''
 # paperurl: ''
 # bibtexurl: ''
-citation: 'Q. Zhang, J. Chi, Z. Zhang, A. Demosthenous, and Y. Wu. &quot;Live Demonstration: A High-Resolution Plantar with Crosstalk Compensation for Human-Machine Interaction.&quot; <i>2026 IEEE International Symposium on Circuits and Systems (ISCAS)</i>, 2026.'
+citation: 'Q. Zhang, J. Chi, Z. Zhang, A. Demosthenous, and Y. Wu. &quot;Live Demonstration: A High-Resolution Plantar with Crosstalk Compensation for Human-Machine Interaction.&quot; <i>Submitted to IEEE International Symposium on Circuits and Systems (ISCAS)</i>, 2026.'
 order: 196
 ---
 
