@@ -44,11 +44,42 @@ Gait analysis is a crucial method for evaluating and monitoring an individual's 
 - Building on the prototype, supervised two students (one MSc and one undergraduate) who used it to complete their theses; the work was published at ISCAS 2025: [paper link](https://ieeexplore.ieee.org/abstract/document/11044303).
 - In the application‑specific integrated circuit (ASIC) phase, developed FPGA test and application code, and supervised another MSc to mitigate resistive‑matrix crosstalk using ML methods.
 - Subsequently designed a lighter ASIC‑based PCB and firmware (insole_pcb2) and co‑authored (2nd author) a paper submitted to ISSCC (submitted 03/09/2025).
+- A conference paper (supervised two students as 3rd authors) and a conference demo paper (1st author) has already submitted to ISCAS 2026 (submitted 28/10/2025).
+
+
+## Hardware designs
+
+### Version 1: Prototype PCB
+MCU: ESP32
+
+Sensors: 32 * 32 resistive pressure sensors on a hard PCB matrix
+
+Wireless: Wi-Fi
 
 <figure>
 	<img src="/images/projects/pcbs/insole_pcb1.png" alt="Insole PCB v1 prototype" loading="lazy" />
 	<figcaption>Insole PCB v1 prototype (insole_pcb1)</figcaption>
 </figure>
+
+### Version 2: Smaller Prototype PCB
+MCU: ESP32
+
+Sensors: ICM 45686 (6-DoF IMU), 253 resistive pressure sensors on flexible substrate (FPC)
+
+Wireless: Wi-Fi
+
+<figure>
+	<img src="/images/projects/pcbs/insole_pcb1-5.png" alt="Insole PCB v1 prototype" loading="lazy" />
+	<figcaption>Insole PCB v1 prototype (insole_pcb1)</figcaption>
+</figure>
+
+
+### Version 3: ASIC-based PCB
+MCU: Nordic nRF52840
+
+Sensors: ICM 45686 (6-DoF IMU), 253 resistive pressure sensors on flexible substrate (FPC)
+
+Wireless: BLE
 
 <figure>
 	<img src="/images/projects/pcbs/insole_pcb2.png" alt="Insole PCB v2 (ASIC-based)" loading="lazy" />
