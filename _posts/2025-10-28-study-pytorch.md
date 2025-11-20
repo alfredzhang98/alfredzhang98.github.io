@@ -21,7 +21,7 @@ As described in the README, the repo is organized into three parts:
 2) Training: Building and training neural networks with PyTorch (autograd, nn module, optim module, and the end-to-end training loop)
 3) Application: Practical projects (e.g., computer vision, LSTM motion prediction)
 
-Currently, the Basic and Training parts are relatively complete; Application is planned as a next step.
+Currently, the Basic, Training and Application parts are complete.
 
 ## Basic
 
@@ -81,6 +81,39 @@ Currently, the Basic and Training parts are relatively complete; Application is 
   - 15_train_fast.ipynb: <https://github.com/alfredzhang98/PyTorch_study/blob/main/Training/15_train_fast.ipynb>
     - Single-/multi-GPU and multi-node setups; nccl/gloo backends; init_process_group/env vars; enumerating devices; DDP best practices.
 
+## Application
+
+- Image Classification
+  - 16_image_classification_basic.ipynb: <https://github.com/alfredzhang98/PyTorch_study/blob/main/Application/16_image_classification_basic.ipynb>
+    - Basics of image classification tasks.
+  - 17_image_cllssification_code.ipynb: <https://github.com/alfredzhang98/PyTorch_study/blob/main/Application/17_image_cllssification_code.ipynb>
+    - Practical code examples for image classification.
+
+- Image Segmentation
+  - 18_image_segmentation_basic.ipynb: <https://github.com/alfredzhang98/PyTorch_study/blob/main/Application/18_image_segmentation_basic.ipynb>
+    - Introduction to image segmentation concepts.
+  - 19_image_segmentation_code.ipynb: <https://github.com/alfredzhang98/PyTorch_study/blob/main/Application/19_image_segmentation_code.ipynb>
+    - Implementation of segmentation models (UNet etc.) and training scripts.
+    - 19_image_segmentation_train.py: Training script for image segmentation.
+    - 19_image_segmentation_val.py: Validation script for image segmentation.
+
+- NLP Basics
+  - 20_nlp_basic.ipynb: <https://github.com/alfredzhang98/PyTorch_study/blob/main/Application/20_nlp_basic.ipynb>
+    - Natural Language Processing fundamentals.
+  - 21_nlp_attention.ipynb: <https://github.com/alfredzhang98/PyTorch_study/blob/main/Application/21_nlp_attention.ipynb>
+    - Understanding Attention mechanisms.
+
+- Advanced NLP Applications
+  - 22_lstm_emotion.ipynb: <https://github.com/alfredzhang98/PyTorch_study/blob/main/Application/22_lstm_emotion.ipynb>
+    - Emotion classification using LSTM.
+    - 22_lstm_emotion.py: Python script version of the LSTM emotion classification.
+  - 23_bert_emotion.ipynb: <https://github.com/alfredzhang98/PyTorch_study/blob/main/Application/23_bert_emotion.ipynb>
+    - Emotion classification using BERT.
+  - 24_bart_abstract.ipynb: <https://github.com/alfredzhang98/PyTorch_study/blob/main/Application/24_bart_abstract.ipynb>
+    - Text summarization/abstract generation using BART.
+    - 24_bart_main.py: Main execution script for BART summarization.
+    - 24_bert_test.py: Test script for BERT/BART models.
+
 ## How to use
 
 - Browse online: click the GitHub links above to open each .ipynb.
@@ -88,7 +121,10 @@ Currently, the Basic and Training parts are relatively complete; Application is 
 
 ## Next steps
 
-- Application section: add practical projects in CV and temporal modeling (e.g., LSTM motion prediction).
+The learning phase is now complete. The next major update will focus on implementing modern architectures from scratch:
+
+- **Hand-rolled Implementations**: Implementing Transformer, ViT (Vision Transformer), and other key frameworks from scratch to understand their inner workings.
+- **Minimal Testing**: Performing minimal testing to verify the correctness of these implementations.
 - Keep refining training/tuning/visualization patterns into reusable templates.
 
 If you're also learning PyTorch, feel free to star and discuss!
