@@ -99,7 +99,7 @@ Update note: I will progressively implement and publish this framework on GitHub
 
 ### 4.2 High-dimensional memory matrix
 
-Each memory node $N$ carries a dynamic weight vector:
+Each memory node \(N\) carries a dynamic weight vector:
 
 $$
 W(N) = \{w_{score},\; w_{freq},\; w_{decay},\; w_{abstract},\; w_{chaos}\}
@@ -111,11 +111,11 @@ $$
 P_{\text{activation}}(N, t)=\frac{w_{score}\,\ln(1+w_{freq})\,w_{abstract}}{(1+\Delta t)^{w_{decay}}}+\mathrm{Noise}(w_{chaos})
 $$
 
-Where $\Delta t$ is the time since the node was last *successfully validated*.
+Where \(\Delta t\) is the time since the node was last *successfully validated*.
 
-- **$w_{decay}$ (time decay)**: fights path dependence; stale knowledge becomes harder to activate
-- **$w_{chaos}$ (exploration / entropy)**: occasionally boosts non-obvious paths (e.g., $\epsilon$-greedy exploration)
-- **$w_{abstract}$ (abstraction level)**: biases retrieval toward principles over raw snippets when appropriate
+- **\(w_{decay}\) (time decay)**: fights path dependence; stale knowledge becomes harder to activate
+- **\(w_{chaos}\) (exploration / entropy)**: occasionally boosts non-obvious paths (e.g., \(\epsilon\)-greedy exploration)
+- **\(w_{abstract}\) (abstraction level)**: biases retrieval toward principles over raw snippets when appropriate
 
 ### 4.3 The recursive memory loop
 
