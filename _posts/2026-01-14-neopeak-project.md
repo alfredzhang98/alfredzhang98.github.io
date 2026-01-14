@@ -25,14 +25,14 @@ NeoPeak is an ultra-compact intelligent terminal featuring:
 
 ## Key Technical Highlights
 
-### Hardware Platform: ESP32-PICO-D4
+### Hardware Platform: ESP32-Pico-V3-02
 
 MCU selection requires:
 - Main frequency > 150MHz
 - RAM ≥ 200KB (112KB for LVGL buffer)
 - SPI speed ≥ 50Mbps (for 60fps refresh)
 
-ESP32-PICO-D4 chosen for:
+ESP32-Pico-V3-02 chosen for:
 - Dual-core, built-in WiFi/Bluetooth
 - Arduino ecosystem friendly
 - Cost and availability
