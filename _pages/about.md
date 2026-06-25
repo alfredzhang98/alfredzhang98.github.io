@@ -129,16 +129,27 @@ redirect_from:
 
     // Scroll-reveal: fade sections in as they enter the viewport.
     var reveals = document.querySelectorAll('.reveal');
-    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduce || !('IntersectionObserver' in window)) {
+    function revealAll() {
       reveals.forEach(function(el){ el.classList.add('is-visible'); });
-    } else {
-      var io = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-          if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
-        });
-      }, { threshold: 0.12 });
-      reveals.forEach(function(el){ io.observe(el); });
+    }
+    try {
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce || !('IntersectionObserver' in window)) {
+        revealAll();
+      } else {
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(e){
+            if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+          });
+        }, { threshold: 0.12 });
+        reveals.forEach(function(el){ io.observe(el); });
+        // Failsafe: if the observer never fires (background tab, throttling,
+        // odd browsers), force everything visible after 1.5s so the page
+        // can never stay blank.
+        setTimeout(revealAll, 1500);
+      }
+    } catch (err) {
+      revealAll();
     }
   })();
   </script>

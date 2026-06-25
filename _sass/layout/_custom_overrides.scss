@@ -201,12 +201,22 @@ html[data-theme="dark"] .hero {
    Scroll reveal
    ============================================================ */
 /* Hidden-then-reveal only when JS is active (html.js-anim is set by an
-   early inline script). Without JS the content stays fully visible. */
-.js-anim .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
-.js-anim .reveal.is-visible { opacity: 1; transform: none; }
+   early inline script). Without JS the content stays fully visible.
+   Failsafe: a CSS animation force-reveals after 1.5s so that if the
+   reveal JS never runs (error, blocked inline script, observer never
+   fires) the page can never get stuck blank. */
+.js-anim .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .6s ease, transform .6s ease;
+  animation: reveal-failsafe 0s linear 1.5s forwards;
+}
+.js-anim .reveal.is-visible { opacity: 1; transform: none; animation: none; }
+
+@keyframes reveal-failsafe { to { opacity: 1; transform: none; } }
 
 @media (prefers-reduced-motion: reduce) {
-  .js-anim .reveal { opacity: 1; transform: none; transition: none; }
+  .js-anim .reveal { opacity: 1; transform: none; transition: none; animation: none; }
   .hero-bg .blob, .hero-avatar img { animation: none; }
 }
 
