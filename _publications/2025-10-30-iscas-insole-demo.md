@@ -12,7 +12,7 @@ publish_year: 2026
 paperurl: 'http://alfredzhang98.github.io/files/2025-10-30-iscas-insole-demo.pdf'
 ieeelink: 'https://ieeexplore.ieee.org/document/11562880'
 # bibtexurl: ''
-citation: 'Q. Zhang, J. Chi, Z. Zhang, A. Demosthenous, and Y. Wu. &quot;Live Demonstration: A High-Resolution Plantar with Crosstalk Compensation for Human-Machine Interaction.&quot; <i>Submitted to IEEE Int. Symp. Circuits Syst. (ISCAS)</i>, 2026.'
+citation: 'Q. Zhang, J. Chi, Z. Zhang, A. Demosthenous, and Y. Wu. &quot;Live Demonstration: A High-Resolution Plantar with Crosstalk Compensation for Human-Machine Interaction.&quot; <i>IEEE Int. Symp. Circuits Syst. (ISCAS)</i>, 2026.'
 order: 196
 ---
 

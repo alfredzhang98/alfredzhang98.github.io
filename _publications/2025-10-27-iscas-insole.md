@@ -12,7 +12,7 @@ publish_year: 2026
 paperurl: 'http://alfredzhang98.github.io/files/2025-10-27-iscas-insole.pdf'
 ieeelink: 'https://ieeexplore.ieee.org/document/11562098'
 # bibtexurl: ''
-citation: 'J. Chi, Z. Zhang, Q. Zhang, A. Demosthenous, and Y. Wu. &quot;Multimodal Smart Insole with Crossbar Crosstalk Compensation for Fall-Risk Prediction.&quot; <i>Submitted to IEEE Int. Symp. Circuits Syst. (ISCAS)</i>, 2026.'
+citation: 'J. Chi, Z. Zhang, Q. Zhang, A. Demosthenous, and Y. Wu. &quot;Multimodal Smart Insole with Crossbar Crosstalk Compensation for Fall-Risk Prediction.&quot; <i>IEEE Int. Symp. Circuits Syst. (ISCAS)</i>, 2026.'
 order: 195
 ---
 

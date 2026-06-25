@@ -12,7 +12,7 @@ publish_year: 2026
 paperurl: 'http://alfredzhang98.github.io/files/2025-09-03-isscc-insoleasic.pdf'
 ieeelink: 'https://ieeexplore.ieee.org/abstract/document/11408992'
 # bibtexurl: 'http://alfredzhang98.github.io/files/isscc26-insoleasic.bib'
-citation: 'J. Li, Q. Zhang, D. Jiang, S. Ha, A. Demosthenous, and Y. Wu. &quot;A 0.62 μW/sensor 82 fps Time-to-Digital Impedance Measurement IC with Unified Excitation/Readout Front-End for Large-Scale Piezo-Resistive Sensor Array.&quot; <i>Submitted to IEEE Int. Solid-State Circuits Conf. (ISSCC)</i>, 2026.'
+citation: 'J. Li, Q. Zhang, D. Jiang, S. Ha, A. Demosthenous, and Y. Wu. &quot;A 0.62 μW/sensor 82 fps Time-to-Digital Impedance Measurement IC with Unified Excitation/Readout Front-End for Large-Scale Piezo-Resistive Sensor Array.&quot; <i>IEEE Int. Solid-State Circuits Conf. (ISSCC)</i>, 2026.'
 order: 49
 ---
 
