@@ -127,7 +127,7 @@ redirect_from:
       }
     });
 
-    // Scroll-reveal: fade sections in as they enter the viewport.
+    /* Scroll-reveal: fade sections in as they enter the viewport. */
     var reveals = document.querySelectorAll('.reveal');
     function revealAll() {
       reveals.forEach(function(el){ el.classList.add('is-visible'); });
@@ -143,9 +143,9 @@ redirect_from:
           });
         }, { threshold: 0.12 });
         reveals.forEach(function(el){ io.observe(el); });
-        // Failsafe: if the observer never fires (background tab, throttling,
-        // odd browsers), force everything visible after 1.5s so the page
-        // can never stay blank.
+        /* Failsafe: if the observer never fires (background tab, throttling,
+           odd browsers), force everything visible after 1.5s so the page
+           can never stay blank. */
         setTimeout(revealAll, 1500);
       }
     } catch (err) {
