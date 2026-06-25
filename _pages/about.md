@@ -1,33 +1,54 @@
 ---
 permalink: /
-author_profile: True
+author_profile: false
+classes:
+  - home
 redirect_from:
   - /about/
   - /about.html
 ---
 
-<div class="about-section card">
-  <div class="card-content">
-    <h2>Summary</h2>
-    <p>
-      Qingyu Zhang, a PhD student at UCL. My research brings together circuit design, image processing, deep learning, and reinforcement learning to develop intelligent robotic systems for healthcare. I’m particularly interested in connecting hardware and algorithms to create systems that are both effective and practical in real-world use.
-    </p>
+{% include base_path %}
+
+<script>document.documentElement.classList.add('js-anim');</script>
+
+<section class="hero reveal">
+  <div class="hero-bg" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
   </div>
-</div>
+  <div class="hero-inner">
+    <div class="hero-avatar">
+      <img src="{{ base_path }}/images/profile.png" alt="Qingyu Zhang" loading="eager" fetchpriority="high" />
+    </div>
+    <div class="hero-text">
+      <p class="hero-eyebrow">Hello, I&rsquo;m</p>
+      <h1 class="hero-name">Qingyu Zhang</h1>
+      <p class="hero-role">PhD Student · Electronic &amp; Electrical Engineering · UCL</p>
+      <p class="hero-tagline">
+        Bridging circuit design, machine learning and robotics to build
+        intelligent healthcare systems that hold up in the real world.
+      </p>
+      <div class="hero-cta">
+        <a class="hbtn hbtn-primary" href="{{ base_path }}/files/cv.pdf" target="_blank" rel="noopener">
+          <i class="fa-solid fa-download" aria-hidden="true"></i> Download CV
+        </a>
+        <a class="hbtn" href="mailto:qingyu.zhang.23@ucl.ac.uk">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i> Email
+        </a>
+      </div>
+      <div class="hero-social">
+        <a href="https://scholar.google.com/citations?user=hJIR4KAAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><i class="ai ai-google-scholar" aria-hidden="true"></i></a>
+        <a href="https://orcid.org/0009-0008-8771-9195" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID"><i class="ai ai-orcid" aria-hidden="true"></i></a>
+        <a href="https://github.com/alfredzhang98" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/qingyuzhang98" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="cv-actions" style="margin: .5rem 0 1rem;">
-  <a class="btn btn-google" href="{{ base_path }}/files/cv.pdf" target="_blank" rel="noopener">
-    <span class="btn-icon" aria-hidden="true">&#8681;</span>
-    <span>Download CV</span>
-  </a>
-  <!-- <small style="margin-left:.5rem;opacity:.8;">PDF</small> -->
-  <!-- Place your PDF at /files/cv.pdf -->
-  <!-- Or change the link above to match your file path -->
-  <!-- Example: {{ base_path }}/files/YourName-CV.pdf -->
-</div>
-
-<div class="about-section">
-  <h2>Research Interests</h2>
+<div class="about-section reveal">
+  <h2 class="sec-title">Research Interests</h2>
   <ul class="chips">
     <li><i class="fa-solid fa-microchip" aria-hidden="true"></i> Circuit and System Design</li>
     <li><i class="fa-solid fa-brain" aria-hidden="true"></i> Deep Learning</li>
@@ -37,8 +58,8 @@ redirect_from:
 </div>
 
 
-<div class="about-section">
-  <h2>Education</h2>
+<div class="about-section reveal">
+  <h2 class="sec-title">Education</h2>
   <ul class="timeline">
     <li data-start="2024-03" data-end="2028-02">
       <div class="timeline-dot"></div>
@@ -64,8 +85,8 @@ redirect_from:
   </ul>
 </div>
 
-<div class="about-section">
-  <h2>Work Experience</h2>
+<div class="about-section reveal">
+  <h2 class="sec-title">Work Experience</h2>
   <ul class="timeline">
     <li data-start="2021-02" data-end="2021-12">
       <div class="timeline-dot"></div>
@@ -105,5 +126,19 @@ redirect_from:
         li.setAttribute('aria-current', 'true');
       }
     });
+
+    // Scroll-reveal: fade sections in as they enter the viewport.
+    var reveals = document.querySelectorAll('.reveal');
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) {
+      reveals.forEach(function(el){ el.classList.add('is-visible'); });
+    } else {
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12 });
+      reveals.forEach(function(el){ io.observe(el); });
+    }
   })();
   </script>

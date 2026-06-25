@@ -9,13 +9,14 @@ date: 2025-10-27
 venue: 'IEEE International Symposium on Circuits and Systems (ISCAS)'
 publish_year: 2026
 # slidesurl: ''
-# paperurl: ''
+paperurl: 'http://alfredzhang98.github.io/files/2025-10-27-iscas-insole.pdf'
+ieeelink: 'https://ieeexplore.ieee.org/document/11562098'
 # bibtexurl: ''
 citation: 'J. Chi, Z. Zhang, Q. Zhang, A. Demosthenous, and Y. Wu. &quot;Multimodal Smart Insole with Crossbar Crosstalk Compensation for Fall-Risk Prediction.&quot; <i>Submitted to IEEE Int. Symp. Circuits Syst. (ISCAS)</i>, 2026.'
 order: 195
 ---
 
-**Status:** This paper has been submitted to IEEE International Symposium on Circuits and Systems (ISCAS) and is currently under review.
+**Status:** Published.
 
 Gait analysis has always relied on latent indicators that can provide early warnings about underlying health conditions. Fall-risk prediction is one of the most important applications. In this paper, we present a portable smart insole system that couples a 253-sensor plantar pressure array with a 6-DoF IMU and an end-to-end deep learning fall risk prediction pipeline. A double-frame sensing scheme with offset calibration expands the sensor's dynamic range and improves the initial resistance distribution. To suppress sneak path crosstalk, a compact U-Net (33×15 input) reconstructs a crosstalk-free matrix from a cross-bar array, achieving R² = 0.9307. The clean pressure map and IMU signals are input into a 3D-CNN + Transformer encoder for joint pose regression (13×3) and fall-risk prediction, achieving accuracy of up to 91%. With this indicator, we can determine whether the cumulative probability of a person falling is steadily increasing over time. This further suggests that their physical health status may warrant additional examination, allowing the system to issue an early warning to the user. Fall itself is instantaneous, but the factors that lead to a fall are issues worth monitoring over the long term.
 

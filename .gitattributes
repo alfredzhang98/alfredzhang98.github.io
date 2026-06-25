@@ -1,0 +1,7 @@
+# Normalise content Markdown to LF line endings.
+# Jekyll's `excerpt_separator: "\n\n"` only matches with LF; CRLF files make the
+# listing excerpt fall back to the *entire* post body (the "news fully expanded" bug).
+_news/**/*.md   text eol=lf
+_news/*.md      text eol=lf
+_posts/**/*.md  text eol=lf
+_posts/*.md     text eol=lf
