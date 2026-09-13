@@ -1,6 +1,8 @@
 ---
 title: "A 0.62 μW/sensor 82 fps Time-to-Digital Impedance Measurement IC with Unified Excitation/Readout Front-End for Large-Scale Piezo-Resistive Sensor Array"
 collection: publications
+venue_short: ISSCC
+image: '2025-09-03-isscc-insoleasic.png'
 category: conferences
 permalink: /publication/2025-09-03-isscc-insoleasic
 show_excerpt: false

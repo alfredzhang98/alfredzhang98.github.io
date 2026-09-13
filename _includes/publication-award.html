@@ -1,0 +1,6 @@
+{% if include.publication.award and include.publication.award_url %}
+<a class="publication-award" href="{{ include.publication.award_url | relative_url }}" aria-label="{{ include.publication.award | escape }} — read the award story">
+  <span class="publication-award__star" aria-hidden="true">&#9733;</span>
+  <span><strong>{{ include.publication.award }}</strong><small>{{ include.publication.award_event }}</small></span>
+</a>
+{% endif %}

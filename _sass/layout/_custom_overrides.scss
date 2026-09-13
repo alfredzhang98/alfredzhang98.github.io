@@ -1,4 +1,46 @@
 /* Custom overrides consolidated from head/custom.html */
+/* Publication rows share the site's blue/teal theme tokens. */
+.publication-award { display: inline-flex; align-items: center; gap: .6rem; margin: 1rem .25rem .25rem; padding: .45rem .8rem; border: 3px double currentColor; border-radius: 7px; color: var(--mm-chip-fg); background: var(--mm-chip-bg); transform: rotate(-3deg); text-decoration: none !important; }
+.publication-award strong { display: block; font-size: .78rem; text-transform: uppercase; letter-spacing: .07em; line-height: 1.4; }
+.publication-award small { display: block; font-size: .65rem; letter-spacing: .1em; line-height: 1.5; }
+.publication-award__star { font-size: 1.45rem; }
+.publication-award:hover { color: var(--mm-accent); }
+.publication-award:focus-visible { outline: 2px solid var(--mm-accent); outline-offset: 4px; }
+.publication-card__details--awarded { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.8rem; }
+.publication-card__metadata { min-width: 0; }
+.publication-card__details--awarded .publication-card__metadata { flex: 1 1 24rem; }
+.publication-card__details--awarded .publication-award { flex: 0 0 auto; margin: .65rem .4rem .65rem auto; padding: .65rem 1rem; }
+@media (max-width: 640px) {
+  .publication-card__details--awarded .publication-award { margin-left: .2rem; margin-right: auto; }
+}
+.publication-profiles { display: flex; flex-wrap: wrap; gap: 1rem; margin: -.25rem 0 2rem; }
+.publication-profiles a { color: var(--mm-accent); font-weight: 600; text-decoration: none; }
+.archive .publication-section-title { margin: 2rem 0 1.5rem; padding-bottom: .65rem; border-bottom: 1px solid var(--mm-line); font-size: 1.35rem; }
+.publication-card { display: grid; grid-template-columns: minmax(180px, 30%) minmax(0, 1fr); gap: 1.6rem; align-items: center; margin: 0 0 1.1rem; padding: 1.4rem; border: 1px solid var(--mm-card-border); border-radius: 16px; background: var(--mm-card-bg); }
+.publication-card--text { grid-template-columns: minmax(0, 1fr); }
+.publication-card__body { min-width: 0; }
+.publication-card__eyebrow { margin-bottom: .7rem; }
+.publication-card__media { position: relative; display: block; aspect-ratio: 16 / 11; border-radius: 14px; background: var(--mm-card-bg); box-shadow: var(--mm-shadow); border: 1px solid var(--mm-card-border); text-decoration: none; }
+.publication-card__media img { display: block; width: 100%; height: 100%; object-fit: contain; border-radius: 14px; }
+.publication-card__badge { display: inline-block; padding: .22rem .6rem; border-radius: 5px; background: var(--mm-chip-bg); color: var(--mm-chip-fg); font-size: .7rem; font-weight: 700; letter-spacing: .05em; }
+.publication-card__badge--overlay { position: absolute; z-index: 1; top: .35rem; left: -.4rem; min-width: 5.5rem; padding: .3rem .9rem; border-radius: 4px; background: var(--mm-chip-fg); color: var(--mm-card-bg); font-size: .8rem; line-height: 1.4; text-align: center; box-shadow: 0 3px 9px rgba(0, 0, 0, .18); }
+.archive .publication-card h3 { margin: 0 0 .5rem; font-size: 1.1rem; line-height: 1.5; }
+.publication-card h3 a { color: var(--mm-accent); text-decoration: none; }
+.publication-card h3 a:hover, .publication-profiles a:hover { text-decoration: underline; }
+.publication-card p { margin: 0 0 .45rem; font-size: .88rem; line-height: 1.6; }
+.publication-card__authors, .publication-card__venue { color: var(--mm-muted); }
+.publication-card__authors strong { color: var(--global-text-color); }
+.publication-card__actions { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem; margin-top: .7rem; }
+.publication-card__actions > a { display: inline-block; border: 1px solid var(--mm-line); border-radius: 6px; padding: .25rem .65rem; color: var(--mm-chip-fg); background: var(--mm-card-bg); font-size: .75rem; text-decoration: none; }
+.publication-card__actions > a:hover { background: var(--mm-chip-bg); border-color: var(--mm-accent); }
+.publication-card__status { color: var(--mm-chip-fg); font-size: .78rem; font-weight: 600; padding: .25rem .45rem; }
+.publication-card__status--review { color: var(--mm-muted); border: 1px dashed var(--mm-line); border-radius: 6px; }
+.publication-card a:focus-visible, .publication-profiles a:focus-visible { outline: 2px solid var(--mm-accent); outline-offset: 4px; }
+@media (max-width: 640px) {
+  .publication-card { grid-template-columns: 1fr; gap: 1rem; padding: 1.1rem; }
+  .publication-card__media { width: 100%; max-width: 360px; }
+}
+
 /* Sticky footer: flex column layout so footer stays at the bottom */
 html, body { height: 100%; }
 body { display: flex; min-height: 100vh; flex-direction: column; }
@@ -101,6 +143,23 @@ html[data-theme="dark"] {
 .timeline .tl-date { font-weight: 600; color: var(--mm-accent); font-size: .92rem; margin-left: .4rem; }
 .timeline li.is-current .timeline-dot { background: #2e9e5b; box-shadow: 0 0 0 4px rgba(46,158,91,.22); }
 .timeline li.is-current .timeline-content h3 .tl-date { color: #2e9e5b; }
+.timeline li.is-current .timeline-dot { width: 12px; height: 12px; border: 0; opacity: 1; }
+.professional-service { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 1.5rem; padding: .65rem 0 1rem; }
+.professional-service__membership { display: flex; align-items: flex-start; gap: .8rem; }
+.professional-service__icon { display: flex; align-items: center; justify-content: center; width: 2.6rem; height: 2.6rem; flex: 0 0 auto; border-radius: 10px; background: var(--mm-chip-bg); color: var(--mm-chip-fg); }
+.professional-service h3 { margin: 0 0 .3rem; font-size: 1.02rem; line-height: 1.4; }
+.professional-service p { margin: 0; color: var(--mm-muted); font-size: .82rem; line-height: 1.5; }
+.professional-service__review { border-left: 1px solid var(--mm-line); padding-left: 1.5rem; }
+.professional-service__venues { display: flex; flex-wrap: wrap; gap: .55rem 1.2rem; list-style: none; padding: 0; margin: .6rem 0 0; }
+.professional-service__venues li { margin: 0; color: var(--mm-chip-fg); font-weight: 600; font-size: .85rem; line-height: 1.5; }
+.professional-service__venues span { display: block; color: var(--mm-muted); font-size: .7rem; font-weight: 400; }
+@media (max-width: 640px) {
+  .professional-service { grid-template-columns: minmax(0, 1fr); gap: 1.1rem; }
+  .professional-service__review { border-left: 0; border-top: 1px solid var(--mm-line); padding: 1rem 0 0; }
+}
+@media (max-width: 640px) {
+  .home .timeline .tl-date { display: block; margin: .25rem 0 0; }
+}
 
 /* ============================================================
    Home layout: drop the reserved right gutter so the content

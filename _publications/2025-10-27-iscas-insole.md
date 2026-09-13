@@ -1,6 +1,8 @@
 ---
 title: "Multimodal Smart Insole with Crossbar Crosstalk Compensation for Fall-Risk Prediction"
 collection: publications
+venue_short: ISCAS
+image: '2025-10-27-iscas-insole.png'
 category: conferences
 permalink: /publication/2025-10-27-iscas-insole
 show_excerpt: false

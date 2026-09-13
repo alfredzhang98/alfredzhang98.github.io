@@ -1,6 +1,9 @@
 ---
 title: "A Method for Improving the Wearability of Capsule Positioning System Using Particle Filter"
 collection: publications
+ieeelink: 'https://ieeexplore.ieee.org/document/11043695'
+venue_short: ISCAS
+image: '2025-05-28-iscas-coil.png'
 category: conferences
 permalink: /publication/2025-05-28-iscas-coil
 show_excerpt: false
@@ -9,7 +12,7 @@ date: 2025-05-28
 venue: 'IEEE International Symposium on Circuits and Systems (ISCAS)'
 publish_year: 2025
 # slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
-paperurl: 'http://alfredzhang98.github.io/files/2025-05-28-iscas-haptic-demo.pdf'
+paperurl: '/files/2025-05-28-iscas-coil.pdf'
 # bibtexurl: 'http://alfredzhang98.github.io/files/iscas25-haptic.bib'
 citation: 'J. Zhang, Q. Zhang, Y. Wu, D. Jiang, and A. Demosthenous, &quot;A Method for Improving the Wearability of Capsule Positioning System Using Particle Filter,&quot; in <i>Proc. IEEE Int. Symp. Circuits Syst. (ISCAS)</i>, 2025.'
 order: 199

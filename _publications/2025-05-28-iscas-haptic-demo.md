@@ -1,6 +1,10 @@
 ---
 title: "Live Demonstration: Haptic-Enhanced Bioimpedance Needle for Assisting Central Venous Catheterisation"
 collection: publications
+ieeelink: 'https://ieeexplore.ieee.org/document/11043161'
+venue_short: ISCAS
+image: '2025-05-28-iscas-haptic-demo.png'
+projecturl: 'https://bioimpedance.uk/'
 category: conferences
 permalink: /publication/2025-05-28-iscas-haptic-demo
 show_excerpt: false
@@ -8,6 +12,9 @@ excerpt: 'This paper presents a novel haptic-enhanced bioimpedance needle for pr
 date: 2025-05-28
 venue: 'IEEE International Symposium on Circuits and Systems (ISCAS)'
 publish_year: 2025
+award: 'Best Demo Award'
+award_event: 'ISCAS 2025'
+award_url: '/posts/2025/5/blog-post-1/'
 # slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
 paperurl: 'http://alfredzhang98.github.io/files/2025-05-28-iscas-haptic-demo.pdf'
 # bibtexurl: 'http://alfredzhang98.github.io/files/iscas25-haptic.bib'

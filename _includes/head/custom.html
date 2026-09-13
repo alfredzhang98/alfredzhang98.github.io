@@ -45,6 +45,10 @@
 	@media (max-width: 768px) {
 		#site-nav.greedy-nav .visible-links { padding-left: 18ch; padding-right: 5.25rem; }
 	}
+	@media (max-width: 899px) {
+		#site-nav.greedy-nav .visible-links { min-height: 3rem; }
+		#site-nav.greedy-nav .visible-links > li:not(.persist) { display: none !important; }
+	}
 	@media (max-width: 520px) {
 		#site-nav.greedy-nav .visible-links { padding-left: 15ch; padding-right: 5rem; }
 	}

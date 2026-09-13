@@ -1,6 +1,9 @@
 ---
 title: "High-Resolution Plantar Pressure Insole System for Enhanced Lower Body Biomechanical Analysis"
 collection: publications
+ieeelink: 'https://ieeexplore.ieee.org/document/11044303'
+venue_short: ISCAS
+image: '2025-05-28-iscas-insole.png'
 category: conferences
 permalink: /publication/2025-05-28-iscas-insole
 show_excerpt: false

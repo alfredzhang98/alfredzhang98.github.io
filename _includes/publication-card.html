@@ -1,0 +1,34 @@
+{% assign badge = post.venue_short | default: 'ISCAS' %}
+{% assign image_path = post.image | default: post.slug | prepend: '/images/paper_images/' %}
+{% unless post.image %}{% assign image_path = image_path | append: '.png' %}{% endunless %}
+{% assign image_file = site.static_files | where: 'path', image_path | first %}
+{% if post.show_image == false %}{% assign image_file = nil %}{% endif %}
+{% assign authors = post.authors %}
+{% unless authors %}{% assign authors = post.citation | split: '&quot;' | first | strip %}{% endunless %}
+<article class="publication-card{% unless image_file %} publication-card--text{% endunless %}">
+  {% if image_file %}
+  <a class="publication-card__media" href="{{ post.url | relative_url }}" aria-label="Read about {{ post.title | escape }}">
+      <img src="{{ image_path | relative_url }}" alt="Overview of {{ post.title | escape }}" loading="lazy" width="640" height="440">
+      <span class="publication-card__badge publication-card__badge--overlay">{{ badge }}</span>
+  </a>
+  {% endif %}
+  <div class="publication-card__body">
+    {% unless image_file %}<div class="publication-card__eyebrow"><span class="publication-card__badge">{{ badge }}</span></div>{% endunless %}
+    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+    <div class="publication-card__details{% if post.award and post.award_url %} publication-card__details--awarded{% endif %}">
+    <div class="publication-card__metadata">
+    <p class="publication-card__authors">{{ authors | replace: 'Qingyu Zhang', '<strong>Qingyu Zhang</strong>' | replace: 'Q. Zhang', '<strong>Q. Zhang</strong>' }}</p>
+    <p class="publication-card__venue"><i>{{ post.venue }}</i>{% if post.publish_year %}<span> · {{ post.publish_year }}</span>{% endif %}</p>
+    <div class="publication-card__actions">
+      {% if post.paperurl %}<a href="{{ post.paperurl | relative_url }}">PDF</a>{% endif %}
+      {% if post.ieeelink %}<a href="{{ post.ieeelink }}">IEEE Xplore</a>{% endif %}
+      {% if post.projecturl %}<a href="{{ post.projecturl }}">Project Page</a>{% endif %}
+      {% if post.slidesurl %}<a href="{{ post.slidesurl }}">Slides</a>{% endif %}
+      {% if post.bibtexurl %}<a href="{{ post.bibtexurl }}">BibTeX</a>{% endif %}
+      <span class="publication-card__status{% if post.status == 'Under review' %} publication-card__status--review{% endif %}">{{ post.status | default: 'Published' }}</span>
+    </div>
+    </div>
+    {% include publication-award.html publication=post %}
+    </div>
+  </div>
+</article>

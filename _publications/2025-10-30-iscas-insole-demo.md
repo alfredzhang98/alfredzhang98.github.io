@@ -1,6 +1,8 @@
 ---
 title: "Live Demonstration: A High-Resolution Plantar with Crosstalk Compensation for Human-Machine Interaction"
 collection: publications
+venue_short: ISCAS
+image: '2025-10-30-iscas-insole-demo.png'
 category: conferences
 permalink: /publication/2025-10-30-iscas-insole-demo
 show_excerpt: false

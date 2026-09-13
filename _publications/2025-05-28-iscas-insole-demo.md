@@ -1,6 +1,9 @@
 ---
 title: "Live Demonstration: A High-Resolution PlantarInsole System for Lower Body Estimation"
 collection: publications
+ieeelink: 'https://ieeexplore.ieee.org/document/11043532'
+venue_short: ISCAS
+image: '2025-05-28-iscas-insole-demo.png'
 category: conferences
 permalink: /publication/2025-05-28-iscas-insole-demo
 show_excerpt: false

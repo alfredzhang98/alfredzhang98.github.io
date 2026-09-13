@@ -1,6 +1,10 @@
 ---
 title: "Haptic-Enhanced Bioimpedance Needle for Precision Navigation in Central Venous Catheterisation with Millimetre Accuracy"
 collection: publications
+ieeelink: 'https://ieeexplore.ieee.org/document/11044142'
+venue_short: ISCAS
+image: '2025-05-28-iscas-haptic.png'
+projecturl: 'https://bioimpedance.uk/'
 category: conferences
 permalink: /publication/2025-05-28-iscas-haptic
 show_excerpt: false

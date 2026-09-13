@@ -35,10 +35,11 @@
     function applyForcedMode(){
       var w = window.innerWidth || document.documentElement.clientWidth || 0;
       var shouldForce = w < THRESHOLD;
-      if(shouldForce && !forced){ forced = true; moveNonPersistToHidden(); closeMenu(); }
+      if(shouldForce){ if(!forced) closeMenu(); forced = true; moveNonPersistToHidden(); }
       else if(!shouldForce && forced){ forced = false; restoreForcedToVisible(); closeMenu(); }
       var hasItems = hidden.children && hidden.children.length > 0;
       if(shouldForce || hasItems){ btn.style.display='inline-flex'; btn.classList.remove('hidden'); } else { btn.style.display='none'; btn.classList.add('hidden'); }
+      document.body.style.paddingTop = nav.closest('.masthead').offsetHeight + 'px';
     }
 
     // Use capture to run before jQuery's handler and stop propagation to avoid double-toggle

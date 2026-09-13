@@ -60,9 +60,10 @@ redirect_from:
 
 <div class="about-section reveal">
   <h2 class="sec-title">Education</h2>
+  {% assign current_month = site.time | date: '%Y%m' | plus: 0 %}
   <ul class="timeline">
-    <li data-start="2024-03" data-end="2028-02">
-      <div class="timeline-dot"></div>
+    <li data-start="2024-03" data-end="2028-02"{% if current_month >= 202403 and current_month <= 202802 %} class="is-current" aria-current="true"{% endif %}>
+      <div class="timeline-dot" aria-hidden="true"></div>
       <div class="timeline-content">
         <h3>PhD in Electronic and Electrical Engineering <span class="tl-date">2024.03 — 2028.02</span></h3>
         <p><i class="fa-solid fa-university" aria-hidden="true"></i> University College London</p>
@@ -106,27 +107,26 @@ redirect_from:
   </ul>
 </div>
 
+<div class="about-section reveal">
+  <h2 class="sec-title">Membership &amp; Peer Review</h2>
+  <div class="professional-service">
+    <div class="professional-service__membership">
+      <span class="professional-service__icon" aria-hidden="true"><i class="fa-solid fa-id-card"></i></span>
+      <div><h3>IEEE Member</h3><p>Professional membership</p></div>
+    </div>
+    <div class="professional-service__review">
+      <h3>Peer Reviewer</h3>
+      <ul class="professional-service__venues" aria-label="Peer review venues">
+        <li>IEEE TBioCAS <span>Journal</span></li>
+        <li>IEEE BioCAS <span>Conference</span></li>
+        <li>IEEE ISCAS <span>Conference</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <script>
   (function() {
-    function toYMInt(s) {
-      if (!s) return null;
-      var parts = s.split('-');
-      var y = parseInt(parts[0], 10);
-      var m = parts[1] ? parseInt(parts[1], 10) : 1;
-      return y * 100 + m;
-    }
-    var now = new Date();
-    var currentYM = now.getFullYear() * 100 + (now.getMonth() + 1);
-    document.querySelectorAll('.timeline li[data-start]').forEach(function(li){
-      var start = toYMInt(li.getAttribute('data-start'));
-      var endAttr = li.getAttribute('data-end');
-      var end = endAttr && endAttr.toLowerCase() !== 'present' ? toYMInt(endAttr) : 999912;
-      if (start && currentYM >= start && currentYM <= end) {
-        li.classList.add('is-current');
-        li.setAttribute('aria-current', 'true');
-      }
-    });
-
     /* Scroll-reveal: fade sections in as they enter the viewport. */
     var reveals = document.querySelectorAll('.reveal');
     function revealAll() {
