@@ -128,6 +128,21 @@ html[data-theme="dark"] {
 }
 .chips li i { margin-right: .4rem; opacity: .9; }
 
+/* Summary prose */
+.about-summary p { margin: 0 0 .8rem; line-height: 1.75; }
+.about-summary p:last-child { margin-bottom: 0; }
+
+/* Skills: category on the left, details on the right */
+.skills { margin: .75rem 0 0; }
+.skills__row { display: grid; grid-template-columns: minmax(0, 17rem) minmax(0, 1fr); gap: .3rem 1.5rem; padding: .7rem 0; border-top: 1px solid var(--mm-line); }
+.skills__row:first-child { border-top: 0; padding-top: 0; }
+.skills dt { margin: 0; font-weight: 700; font-size: .95rem; line-height: 1.6; }
+.skills dt i { width: 1.35rem; margin-right: .3rem; text-align: center; color: var(--mm-accent); }
+.skills dd { margin: 0; color: var(--mm-muted); font-size: .92rem; line-height: 1.6; }
+@media (max-width: 640px) {
+  .skills__row { grid-template-columns: minmax(0, 1fr); }
+}
+
 /* Timeline */
 .timeline { list-style: none; padding-left: 0; margin: .75rem 0 0; position: relative; }
 .timeline li { position: relative; padding-left: 1.6rem; margin: 0 0 1.1rem; }

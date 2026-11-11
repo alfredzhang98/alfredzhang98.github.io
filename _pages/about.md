@@ -24,10 +24,10 @@ redirect_from:
     <div class="hero-text">
       <p class="hero-eyebrow">Hello, I&rsquo;m</p>
       <h1 class="hero-name">Qingyu Zhang</h1>
-      <p class="hero-role">PhD Student · Electronic &amp; Electrical Engineering · UCL</p>
+      <p class="hero-role">PhD Researcher · Electronic &amp; Electrical Engineering · UCL</p>
       <p class="hero-tagline">
-        Bridging circuit design, machine learning and robotics to build
-        intelligent healthcare systems that hold up in the real world.
+        Working across robotics, embodied intelligence and bioelectronic systems
+        to make robotic manipulation adaptive and generalisable.
       </p>
       <div class="hero-cta">
         <a class="hbtn hbtn-primary" href="{{ base_path }}/files/cv.pdf" target="_blank" rel="noopener">
@@ -47,14 +47,61 @@ redirect_from:
   </div>
 </section>
 
+<div class="about-section about-summary reveal">
+  <h2 class="sec-title">Summary</h2>
+  <p>
+    I am a PhD researcher at University College London (UCL), funded by EPSRC and the China Scholarship Council (CSC), specialising in robotics, embodied intelligence, and bioelectronic systems. My research spans multimodal perception, tactile sensing, reinforcement learning, and human&ndash;robot interaction, with an emphasis on enabling adaptive and generalisable robotic manipulation.
+  </p>
+  <p>
+    My current research explores the evaluation and generalisation of reusable robotic skills, alongside the joint design of high-level decision-making and low-level learning-based control for complex manipulation tasks.
+  </p>
+  <p>
+    I have a strong background in hardware&ndash;software co-design, embedded systems, and robotic system integration, with research experience in medical robotics and haptic interfaces. Prior to joining UCL, I graduated top of my MSc class at the University of Bristol and co-invented six patents in intelligent hardware and sensing technologies.
+  </p>
+</div>
+
 <div class="about-section reveal">
   <h2 class="sec-title">Research Interests</h2>
   <ul class="chips">
-    <li><i class="fa-solid fa-microchip" aria-hidden="true"></i> Circuit and System Design</li>
-    <li><i class="fa-solid fa-brain" aria-hidden="true"></i> Deep Learning</li>
-    <li><i class="fa-solid fa-robot" aria-hidden="true"></i> Reinforcement Learning</li>
-    <li><i class="fa-solid fa-eye" aria-hidden="true"></i> Vision-Language-Action Models</li>
+    <li><i class="fa-solid fa-robot" aria-hidden="true"></i> Embodied Intelligence</li>
+    <li><i class="fa-solid fa-hand" aria-hidden="true"></i> Robotic Manipulation</li>
+    <li><i class="fa-solid fa-brain" aria-hidden="true"></i> Reinforcement Learning</li>
+    <li><i class="fa-solid fa-eye" aria-hidden="true"></i> Multimodal Perception</li>
+    <li><i class="fa-solid fa-fingerprint" aria-hidden="true"></i> Tactile Sensing</li>
+    <li><i class="fa-solid fa-handshake" aria-hidden="true"></i> Human&ndash;Robot Interaction</li>
+    <li><i class="fa-solid fa-comments" aria-hidden="true"></i> Vision-Language-Action Models</li>
+    <li><i class="fa-solid fa-microchip" aria-hidden="true"></i> Bioelectronic Systems</li>
   </ul>
+</div>
+
+<div class="about-section reveal">
+  <h2 class="sec-title">Skills</h2>
+  <dl class="skills">
+    <div class="skills__row">
+      <dt><i class="fa-solid fa-code" aria-hidden="true"></i> Programming &amp; Machine Learning</dt>
+      <dd>Python, C/C++, PyTorch, MATLAB, Verilog; computer vision, deep learning, and reinforcement learning.</dd>
+    </div>
+    <div class="skills__row">
+      <dt><i class="fa-solid fa-robot" aria-hidden="true"></i> Robot Learning &amp; Embodied AI</dt>
+      <dd>Robotic policy learning and evaluation, skill-based manipulation, hierarchical decision-making, multimodal perception, and vision-language-action models (research interests).</dd>
+    </div>
+    <div class="skills__row">
+      <dt><i class="fa-solid fa-cubes" aria-hidden="true"></i> Robotics &amp; Simulation</dt>
+      <dd>MuJoCo, MuJoCo Warp, UR collaborative robots, Haply Inverse3 haptic interfaces, and custom robotic platforms.</dd>
+    </div>
+    <div class="skills__row">
+      <dt><i class="fa-solid fa-wave-square" aria-hidden="true"></i> Multimodal Sensing &amp; Bioelectronics</dt>
+      <dd>Tactile and force sensing, bioimpedance measurement, sensor fusion, and real-time acquisition systems.</dd>
+    </div>
+    <div class="skills__row">
+      <dt><i class="fa-solid fa-microchip" aria-hidden="true"></i> Embedded Systems &amp; Hardware</dt>
+      <dd>ESP32, STM32, embedded C/C++, RTOS, BLE, SPI, I&sup2;C, UART, PCB design, mixed-signal circuit integration, and hardware debugging.</dd>
+    </div>
+    <div class="skills__row">
+      <dt><i class="fa-solid fa-compass-drafting" aria-hidden="true"></i> Modelling &amp; Engineering</dt>
+      <dd>COMSOL Multiphysics, SolidWorks, Blender, finite element analysis, and electrical field simulation.</dd>
+    </div>
+  </dl>
 </div>
 
 
@@ -80,7 +127,7 @@ redirect_from:
       <div class="timeline-dot"></div>
       <div class="timeline-content">
         <h3>BEng in Optical and Electronical Information Science Technology <span class="tl-date">2016.09 — 2020.06</span></h3>
-        <p><i class="fa-solid fa-university" aria-hidden="true"></i> Huazhong University of Science and Technology · Outstanding Graduate · GPA: 3.23/4.0</p>
+        <p><i class="fa-solid fa-university" aria-hidden="true"></i> Huazhong University of Science and Technology · Outstanding Graduate · GPA: 3.22/4.0</p>
       </div>
     </li>
   </ul>
