@@ -30,7 +30,7 @@ redirect_from:
         to make robotic manipulation adaptive and generalisable.
       </p>
       <div class="hero-cta">
-        <a class="hbtn hbtn-primary" href="{{ base_path }}/files/cv.pdf" target="_blank" rel="noopener">
+        <a class="hbtn hbtn-primary" href="{{ base_path }}/files/cv.pdf" data-zh-href="{{ base_path }}/files/cv-zh.pdf" target="_blank" rel="noopener">
           <i class="fa-solid fa-download" aria-hidden="true"></i> Download CV
         </a>
         <a class="hbtn" href="mailto:qingyu.zhang.23@ucl.ac.uk">

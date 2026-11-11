@@ -23,37 +23,27 @@
 <!-- Header layout overrides: keep header-specific CSS close to head -->
 <style>
 	.masthead__menu { position: relative; }
+	/* Title on the left, language switch on the right, links centred in the
+	   space between. Done with flex + auto margins so the header is already
+	   laid out correctly before any script runs (no flash on page load) and
+	   re-centres by itself when translation changes the label widths. */
 	#site-nav.greedy-nav .visible-links {
-		display: block !important;
-		position: static;
+		display: flex !important;
+		align-items: center;
 		width: 100%;
-		text-align: center;
-		padding-left: 22ch; /* reserve left for title */
-		padding-right: 5.75rem; /* reserve right for theme + hamburger */
+		padding-left: 0.75rem;
+		padding-right: 2.75rem; /* room for the hamburger */
 		box-sizing: border-box;
 	}
-	#site-nav.greedy-nav .visible-links > li { display: inline-block !important; vertical-align: middle; }
-	#site-nav.greedy-nav .visible-links > li:first-child {
-		position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%);
-		white-space: nowrap; z-index: 2;
-	}
-	#site-nav.greedy-nav .visible-links > li#theme-toggle {
-		position: absolute; right: 2.75rem; top: 50%; transform: translateY(-50%); z-index: 2;
-	}
+	#site-nav.greedy-nav .visible-links > li { display: block !important; flex: 0 0 auto; }
+	#site-nav.greedy-nav .visible-links > li:first-child { margin-right: auto; padding-right: 0; }
+	#site-nav.greedy-nav .visible-links > li#theme-toggle { margin-left: auto; }
 	#site-nav.greedy-nav .visible-links > li a { margin: 0 0.8rem; }
 	#site-nav.greedy-nav .visible-links > li a:before { bottom: -2px; }
-	@media (max-width: 768px) {
-		#site-nav.greedy-nav .visible-links { padding-left: 18ch; padding-right: 5.25rem; }
-	}
 	@media (max-width: 899px) {
 		#site-nav.greedy-nav .visible-links { min-height: 3rem; }
 		#site-nav.greedy-nav .visible-links > li:not(.persist) { display: none !important; }
 	}
-	@media (max-width: 520px) {
-		#site-nav.greedy-nav .visible-links { padding-left: 15ch; padding-right: 5rem; }
-	}
 </style>
-
-<!-- Balance nav paddings script moved to assets/js/nav-balance.js and loaded via _includes/scripts.html -->
 
 <!-- end custom head snippets -->

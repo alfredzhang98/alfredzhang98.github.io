@@ -142,6 +142,23 @@
       return parts[2] || 'en';
     } catch(e){ return 'en'; }
   }
+  function getCurrentLang(){
+    var saved = null; try { saved = localStorage.getItem('site_lang'); } catch(e){}
+    return saved || getTranslateLang() || 'en';
+  }
+  // Language-specific files (e.g. the CV PDF): an element carries its Chinese
+  // URL in data-zh-href / data-zh-src and is pointed at it in Chinese mode.
+  // Switching language reloads the page, so English needs no restore step.
+  function setLocalizedFiles(lang){
+    if (lang !== 'zh-CN') return;
+    try {
+      ['href', 'src'].forEach(function(attr){
+        document.querySelectorAll('[data-zh-' + attr + ']').forEach(function(el){
+          el.setAttribute(attr, el.getAttribute('data-zh-' + attr));
+        });
+      });
+    } catch(e){}
+  }
   function switchTo(lang){
     setTranslateCookie(lang);
     try { localStorage.setItem('site_lang', lang); } catch(e){}
@@ -166,6 +183,9 @@
     document.head.appendChild(css);
   }
   function boot(){
+    // Done first and independently of Google Translate, which may be slow or blocked.
+    setLangActive(getCurrentLang());
+    setLocalizedFiles(getCurrentLang());
     ensureHiddenUI();
     var host = document.createElement('div');
     host.id = 'google_translate_element';
